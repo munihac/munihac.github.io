@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # configuration
 TARGET_BRANCH=gh-pages
 if hash site 2>/dev/null; then
