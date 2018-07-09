@@ -1,0 +1,51 @@
+sudo: required
+dist: trusty
+
+language: c
+
+cache:
+  directories:
+  - $HOME/.ghc
+  - $HOME/.cabal
+  - $HOME/.stack
+
+branches:
+  only:
+    - master
+
+env:
+  global:
+  - REMOTE_REPO=git@github.com:munihac/munihac.github.io.git
+  - GIT_EMAIL=munihac@tngtech.com
+  - GIT_NAME=Travis
+
+matrix:
+  include:
+  - env: BUILD=stack GHCVER=8.0.2 ARGS="--resolver lts-8"
+    compiler: ": #stack 8.0.2"
+    addons: {apt: {packages: [ghc-8.0.2], sources: [hvr-ghc]}}
+
+before_install:
+- unset CC
+- CABALARGS=""
+- if [ "x$GHCVER" = "xhead" ]; then CABALARGS=--allow-newer; fi
+- export PATH=/opt/ghc/$GHCVER/bin:/opt/cabal/$CABALVER/bin:$HOME/.local/bin:$PATH
+- mkdir -p ~/.local/bin
+- curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C ~/.local/bin '*/stack'
+
+install:
+- echo "$(ghc --version) [$(ghc --print-project-git-commit-id 2> /dev/null || echo '?')]"
+- if [ -f configure.ac ]; then autoreconf -i; fi
+- stack --no-terminal --install-ghc $ARGS install
+
+before_script:
+  - git config user.email "$GIT_EMAIL"
+  - git config user.name "$GIT_NAME"
+  - mkdir -m 700 -p $HOME/.ssh
+  - echo "$SSH_DEPLOY_KEY" | base64 -d > $HOME/.ssh/id_rsa
+  - chmod 600 $HOME/.ssh/id_rsa
+  - echo "|1|QUKQi0hqb2IQIg53Hztk2sa8Ae4=|dWGPqBKSkj8OA3c2+RhP3otk4hs= ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ==" >> $HOME/.ssh/known_hosts
+  - echo "|1|HWtB6v5G3xm6GVUAbUN/B7hphM8=|1Mpu47AyndKZ9YAsFMF2T26cSQo= ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ==" >> $HOME/.ssh/known_hosts
+
+script:
+- "echo ./deploy.sh $REMOTE_REPO || echo ./deploy.sh $REMOTE_REPO --verbose"
