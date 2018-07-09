@@ -3,7 +3,7 @@
 set -e
 
 # configuration
-TARGET_BRANCH=gh-pages
+TARGET_BRANCH=master
 if hash site 2>/dev/null; then
   SITE=site
 else
