@@ -85,7 +85,15 @@ function commit_and_push_changes_to_remote_repo() {
 function main() {
   clone_remote_repo_to_build_dir
   compile_static_site_in_build_dir
-  commit_and_push_changes_to_remote_repo
+
+  current_branch_name=$(git symbolic-ref -q HEAD)
+  current_branch_name=${current_branch_name##refs/heads/}
+  if [[ "$current_branch_name" == "gh-pages-source" ]]; then
+     commit_and_push_changes_to_remote_repo
+  else
+      echo "currently on $current_branch_name, do not push changes"
+  fi
+
   cleanup_build_dir
 }
 
