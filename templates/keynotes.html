@@ -1,7 +1,19 @@
 <h2>Keynotes</h2>
 
-<div class="keynote">
-    <h3>Ryan Scott</h3>
+<a name="RyanScott"><div class="keynote">
+    <h3>The Curious Case of Pattern-Match Coverage Checking</h3>
+    <h4>Ryan Scott</h4>
+    <p>
+        Patterns in Haskell are useful, but they're prone to issues such as
+        incomplete and redundant patterns if used carelessly. Thankfully, GHC
+        offers a very handy static analysis, called pattern-match coverage
+        checking, which emits warnings if you use patterns recklessly. This talk
+        explores the design considerations of coverage checking, considers some of
+        the more challenging aspects of determining whether patterns are
+        exhaustive, and even demonstrates some patterns that aren't checked
+        correctly (as of GHC 8.6!) but will be soon.
+    </p>
+
     <p>
         Ryan is a Ph.D student at Indiana University, where he
         attempts to combine techniques from software verification and
@@ -13,9 +25,9 @@
         Core Libraries Committee and maintains libraries ranging from
         <code>criterion</code> to <code>singletons</code>.
     </p>
-</div>
+</div></a>
 
-<div class="keynote">
+<a name="BenGamari"><div class="keynote">
     <h3>Ben Gamari</h3>
     <p>
         Ben uses Haskell in fields as diverse as applied machine
@@ -42,10 +54,26 @@
         Massachusetts and has publications spanning social network
         analysis, computational physics, and biophysics.
     </p>
-</div>
+</div></a>
 
-<div class="keynote">
-    <h3>Matthew Pickering</h3>
+<a name="MatthewPickering"><div class="keynote">
+    <h3>Beautiful Template Haskell</h3>
+    <h4>Matthew Pickering</h4>
+    <p>
+        Forget everything you know about Template Haskell. We will enter the
+        beautiful world of Typed Template Haskell where its only possible to
+        construct well-scoped and well-typed terms. Why? By writing our
+        program in multiple stages, we can guarantee to eliminate the
+        interpretative overhead caused by abstraction.
+    </p>
+    <p>
+        Mattew will give an introduction to Typed Template Haskell and then
+        describe some examples of how to construct abstract and efficient
+        programs using techniques from multi-stage programming. We will
+        construct an "efficient" power function and also give a sketch of how
+        to implement a SQL query compiler as inspired by the functional pearl
+        "A SQL to C Compiler in 500 Lines of Code".
+    </p>
     <p>
         Matthew is a PhD student at the University of Bristol focusing on
         program generation with applications to optimisation. In the quest
@@ -53,4 +81,4 @@
         to GHC where he has recently been working on making the compiler
         easier to extend by using source plugins.
     </p>
-</div>
+</div></a>
