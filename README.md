@@ -1,6 +1,6 @@
 # MuniHac
 
-This is the Haskell project to build the (static) website [www.munihac.de](www.munihac.de).
+This is the Haskell project to build the (static) website [www.munihac.de](http://www.munihac.de).
 
 ## Building
 
