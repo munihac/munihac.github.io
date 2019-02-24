@@ -4,119 +4,129 @@
 <div class="keynote">
     <h3>The Curious Case of Pattern-Match Coverage Checking</h3>
     <h4>Ryan Scott</h4>
-    <p>
-        Patterns in Haskell are useful, but they're prone to issues such as
-        incomplete and redundant patterns if used carelessly. Thankfully, GHC
-        offers a very handy static analysis, called pattern-match coverage
-        checking, which emits warnings if you use patterns recklessly. This talk
-        explores the design considerations of coverage checking, considers some of
-        the more challenging aspects of determining whether patterns are
-        exhaustive, and even demonstrates some patterns that aren't checked
-        correctly (as of GHC 8.6!) but will be soon.
-    </p>
+    <div class="row">
+        <div class="col-md-8">
+            <p>
+                Patterns in Haskell are useful, but they're prone to issues such as
+                incomplete and redundant patterns if used carelessly. Thankfully, GHC
+                offers a very handy static analysis, called pattern-match coverage
+                checking, which emits warnings if you use patterns recklessly. This talk
+                explores the design considerations of coverage checking, considers some of
+                the more challenging aspects of determining whether patterns are
+                exhaustive, and even demonstrates some patterns that aren't checked
+                correctly (as of GHC 8.6!) but will be soon.
+            </p>
 
-    <p>
-        Ryan is a Ph.D student at Indiana University, where he
-        attempts to combine techniques from software verification and
-        determinism (sometimes successfully!). He is also a key
-        contributor to GHC, where he specializes in the areas of
-        <code>deriving</code>, Template Haskell, pattern-match coverage
-        checking, and various odds and ends in the typechecker. Through a
-        series of strange coincidences, he is also a member of the Haskell
-        Core Libraries Committee and maintains libraries ranging from
-        <code>criterion</code> to <code>singletons</code>.
-    </p>
-    <p>
-        (<a href="https://youtu.be/nDmNTRG1V_0">https://youtu.be/nDmNTRG1V_0</a>)
-    </p>
+            <p>
+                Ryan is a Ph.D student at Indiana University, where he
+                attempts to combine techniques from software verification and
+                determinism (sometimes successfully!). He is also a key
+                contributor to GHC, where he specializes in the areas of
+                <code>deriving</code>, Template Haskell, pattern-match coverage
+                checking, and various odds and ends in the typechecker. Through a
+                series of strange coincidences, he is also a member of the Haskell
+                Core Libraries Committee and maintains libraries ranging from
+                <code>criterion</code> to <code>singletons</code>.
+            </p>
+        </div>
+        <div class="col-md-4">
+            <iframe width="320" height="180" src="https://www.youtube-nocookie.com/embed/nDmNTRG1V_0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
 </div>
 
 <a name="MatthewPickering" />
 <div class="keynote">
     <h3>Beautiful Template Haskell</h3>
     <h4>Matthew Pickering</h4>
-    <p>
-        Forget everything you know about Template Haskell. We will enter the
-        beautiful world of Typed Template Haskell where its only possible to
-        construct well-scoped and well-typed terms. Why? By writing our
-        program in multiple stages, we can guarantee to eliminate the
-        interpretative overhead caused by abstraction.
-    </p>
-    <p>
-        Matthew will give an introduction to Typed Template Haskell and then
-        describe some examples of how to construct abstract and efficient
-        programs using techniques from multi-stage programming. We will
-        construct an "efficient" power function and also give a sketch of how
-        to implement a SQL query compiler as inspired by the functional pearl
-        "A SQL to C Compiler in 500 Lines of Code".
-    </p>
-    <p>
-        Matthew is a PhD student at the University of Bristol focusing on
-        program generation with applications to optimisation. In the quest
-        to write the perfect program he has become a regular contributor
-        to GHC where he has recently been working on making the compiler
-        easier to extend by using source plugins.
-    </p>
-    <p>
-        (<a href="https://youtu.be/AzJVFkm42zM">https://youtu.be/AzJVFkm42zM</a>)
-    </p>
+    <div class="row">
+        <div class="col-md-8">
+            <p>
+                Forget everything you know about Template Haskell. We will enter the
+                beautiful world of Typed Template Haskell where its only possible to
+                construct well-scoped and well-typed terms. Why? By writing our
+                program in multiple stages, we can guarantee to eliminate the
+                interpretative overhead caused by abstraction.
+            </p>
+            <p>
+                Matthew will give an introduction to Typed Template Haskell and then
+                describe some examples of how to construct abstract and efficient
+                programs using techniques from multi-stage programming. We will
+                construct an "efficient" power function and also give a sketch of how
+                to implement a SQL query compiler as inspired by the functional pearl
+                "A SQL to C Compiler in 500 Lines of Code".
+            </p>
+            <p>
+                Matthew is a PhD student at the University of Bristol focusing on
+                program generation with applications to optimisation. In the quest
+                to write the perfect program he has become a regular contributor
+                to GHC where he has recently been working on making the compiler
+                easier to extend by using source plugins.
+            </p>
+        </div>
+        <div class="col-md-4">
+            <iframe width="320" height="180" src="https://www.youtube-nocookie.com/embed/AzJVFkm42zM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
 </div>
 
 <a name="BenGamari" />
 <div class="keynote">
     <h3>A low-latency garbage collector for GHC</h3>
     <h4>Ben Gamari</h4>
+    <div class="row">
+        <div class="col-md-8">
+            <p>
+                As real-time and distributed systems become common-place, latencies
+                associated with memory management begin to limit the usability of
+                garbage collected languages. In particular, the Glasgow Haskell Compiler
+                has long relied on a throughput-oriented copying garbage collector;
+                while this collector provides good memory locality for user programs,
+                minimal fragmentation, and efficient collection, it imposes large
+                latencies when collecting large heaps.
+            </p>
 
-    <p>
-        As real-time and distributed systems become common-place, latencies
-        associated with memory management begin to limit the usability of
-        garbage collected languages. In particular, the Glasgow Haskell Compiler
-        has long relied on a throughput-oriented copying garbage collector;
-        while this collector provides good memory locality for user programs,
-        minimal fragmentation, and efficient collection, it imposes large
-        latencies when collecting large heaps.
-    </p>
+            <p>
+                Recent language implementations (e.g. Go, Mono, various Java implementations)
+                have moved away from have avoided the problem of garbage collection
+                latency through use of concurrent collection on a non-moving heap. In
+                this talk Ben will provide a high-level overview of a concurrent,
+                non-moving garbage collector implemented for the Glasgow
+                Haskell Compiler. This collector offers significantly improved pause
+                times without the need for code recompilation and with minimal impact on
+                program runtime. He will discuss the trade-offs implicit in the design, the
+                challenges posed by collecting Haskell in particular, and present some
+                preliminary performance measurements from a prototype implementation.
+            </p>
 
-    <p>
-        Recent language implementations (e.g. Go, Mono, various Java implementations)
-        have moved away from have avoided the problem of garbage collection
-        latency through use of concurrent collection on a non-moving heap. In
-        this talk Ben will provide a high-level overview of a concurrent,
-        non-moving garbage collector implemented for the Glasgow
-        Haskell Compiler. This collector offers significantly improved pause
-        times without the need for code recompilation and with minimal impact on
-        program runtime. He will discuss the trade-offs implicit in the design, the
-        challenges posed by collecting Haskell in particular, and present some
-        preliminary performance measurements from a prototype implementation.
-    </p>
+            <p>
+                Ben uses Haskell in fields as diverse as applied machine
+                learning, scientific data analysis, robotics control, and compiler
+                engineering. He is an active contributor to the Glasgow Haskell
+                Compiler with focus on code generation, Core optimization, and the
+                runtime system, and has worked extensively towards bringing GHC to
+                the ARM architecture.
+            </p>
 
-    <p>
-        Ben uses Haskell in fields as diverse as applied machine
-        learning, scientific data analysis, robotics control, and compiler
-        engineering. He is an active contributor to the Glasgow Haskell
-        Compiler with focus on code generation, Core optimization, and the
-        runtime system, and has worked extensively towards bringing GHC to
-        the ARM architecture.
-    </p>
+            <p>
+                He has experience implementing numerical methods for machine learning, with an
+                eye towards leveraging Haskell’s strong type system to enforce
+                correctness at compile-time. Ben has expertise developing
+                high-performance distributed systems in a wide range of
+                languages. Past projects include GPU-based modelling of
+                high-energy particle interactions and an implementation of
+                parallel machine learning algorithms for large-scale social
+                network analysis.
+            </p>
 
-    <p>
-        He has experience implementing numerical methods for machine learning, with an
-        eye towards leveraging Haskell’s strong type system to enforce
-        correctness at compile-time. Ben has expertise developing
-        high-performance distributed systems in a wide range of
-        languages. Past projects include GPU-based modelling of
-        high-energy particle interactions and an implementation of
-        parallel machine learning algorithms for large-scale social
-        network analysis.
-    </p>
-
-    <p>
-        He is completing a PhD in Physics at the University of
-        Massachusetts and has publications spanning social network
-        analysis, computational physics, and biophysics.
-    </p>
-
-    <p>
-        (<a href="https://youtu.be/7_ig6r2C-d4">https://youtu.be/7_ig6r2C-d4</a>)
-    </p>
+            <p>
+                He is completing a PhD in Physics at the University of
+                Massachusetts and has publications spanning social network
+                analysis, computational physics, and biophysics.
+            </p>
+        </div>
+        <div class="col-md-4">
+            <iframe width="320" height="180" src="https://www.youtube-nocookie.com/embed/7_ig6r2C-d4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
 </div>
