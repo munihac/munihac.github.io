@@ -20,6 +20,10 @@ main = hakyll $ do
         route   idRoute
         compile copyFileCompiler
 
+    match "img/**/*" $ do
+        route   idRoute
+        compile copyFileCompiler
+
     match "css/*" $ do
         route   idRoute
         compile compressCssCompiler
@@ -34,24 +38,18 @@ main = hakyll $ do
 
     match "templates/*" $ compile templateBodyCompiler
 
+    match "templates/**/*" $ compile templateBodyCompiler
+
     match "hotels/*" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
             >>= relativizeUrls
 
-    match "index.html" $ do
+    create ["index.html"] $ do
         route idRoute
-        compile $ do
-            hotels <- loadAll "hotels/*"
-            let indexCtx =
-                    hotelCtx hotels
-                    <> constField "title" "MuniHac 2018"
-                    <> defaultContext
+        compile $ makeItem $ Redirect "2018.html"
 
-            getResourceBody
-                >>= applyAsTemplate indexCtx
-                >>= loadAndApplyTemplate "templates/default.html" indexCtx
-                >>= relativizeUrls
+    match "2018.html" compileMainPage
 
     match "impressum.html" $ do
         route idRoute
@@ -60,6 +58,21 @@ main = hakyll $ do
                 >>= applyAsTemplate defaultContext
                 >>= loadAndApplyTemplate "templates/default.html" defaultContext
                 >>= relativizeUrls
+
+compileMainPage :: Rules ()
+compileMainPage = do
+    route idRoute
+    compile $ do
+        hotels <- loadAll "hotels/*"
+        let indexCtx =
+                hotelCtx hotels
+                <> constField "title" "MuniHac 2018"
+                <> defaultContext
+
+        getResourceBody
+            >>= applyAsTemplate indexCtx
+            >>= loadAndApplyTemplate "templates/default.html" indexCtx
+            >>= relativizeUrls
 
 hotelCtx :: [Item String] -> Context String
 hotelCtx hotels = listField "hotels"
