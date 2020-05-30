@@ -52,6 +52,7 @@ main = hakyll $ do
     match "2016.html" compileMainPage
     match "2018.html" compileMainPage
     match "2019.html" compileMainPage
+    match "2020.html" compileMainPage
 
     match "impressum.html" $ do
         route idRoute
@@ -66,11 +67,7 @@ compileMainPage = do
     route idRoute
     compile $ do
         hotels <- loadAll "hotels/*"
-        let indexCtx =
-                hotelCtx hotels
-                <> constField "title" "MuniHac 2018"
-                <> defaultContext
-
+        let indexCtx = hotelCtx hotels <> defaultContext
         getResourceBody
             >>= applyAsTemplate indexCtx
             >>= loadAndApplyTemplate "templates/default.html" indexCtx
