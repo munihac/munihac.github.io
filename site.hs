@@ -47,7 +47,7 @@ main = hakyll $ do
 
     create ["index.html"] $ do
         route idRoute
-        compile $ makeItem $ Redirect "2019.html"
+        compile $ makeItem $ Redirect "2020.html"
 
     match "2016.html" compileMainPage
     match "2018.html" compileMainPage
