@@ -4,6 +4,12 @@ This is the Haskell project to build the (static) website [www.munihac.de](http:
 
 ## Building
 
+Using [Nix/NixOS](https://nixos.org/):
+
+```
+nix-build
+```
+
 Using [stack](https://www.haskellstack.org):
 
 ```bash
