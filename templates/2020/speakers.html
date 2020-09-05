@@ -247,14 +247,26 @@
 
 <div class="row">
     <div class="col-md-12"> <a name="PepeIborra" />
-        <h4>Let's
-            write a Haskell Language Server plugin</h4>
+        <h4>Let's write a Haskell Language Server plugin</h4>
         <h5>Pepe Iborra</h5>
-        <p>In this
-            talk/workshop we will add a code lens over every implicit import statement,
-            showing the names actually imported from the module. Along the way we will learn
-            about the HLS plugin model, how it relates to ghcide, and how to build and test
-            our plugin.</p>
+        <p>In this workshop we will add a code lens over every implicit import statement, showing the names actually
+            imported from the module. Along the way we will learn about the HLS plugin model, how it relates to ghcide,
+            and how to build and test our plugin.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12"> <a name="RichardEisenberg" />
+        <h4>Partial Type Constructors</h4>
+        <h5>Richard Eisenberg</h5>
+        <p>When we describe the type `Set a`, we say that this type makes sense for any `a`. But this is a small lie: it
+            really only makes sense for types `a` that have an ordering -- that is, types for which `Ord a` holds. This
+            small lie has far-reaching consequences. It means that we cannot write a `Functor` instance for `Set`, it
+            means we might accidentally write uncallable functions that take a `Set (Int -> Int)`, and it means we must
+            repetitively write `Ord a => ...` constraints on every function working with Sets.</p>
+        <p>This talk will explore the possibility of explicitly *partial* type constructors, where we can declare loudly
+            that types like `Set` work only with some type arguments, but not others. The design proposed improves error
+            messages, simplifies type signatures, and allows instances like `Functor` over `Set`s.</p>
     </div>
 </div>
 
