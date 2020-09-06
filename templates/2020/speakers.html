@@ -6,10 +6,10 @@
         <a name="AlejandroSerrano" />
         <h4>Miso: Haskell in the front-end</h4>
         <h5>Alejandro Serrano</h5>
-        <p>Type checking and inference lies at the bottom of our compilers, and we routinely interact with it using type
-            signatures and reading error messages. But how does it work? In this workshop the goal is to implement a
-            minimal type checker and elaborator for (part of) the Haskell language. Depending on the time, we would talk
-            about simple terms, generalization, constructors, type classes, and (G)ADTs.</p>
+        <p>Haskell has no shortage of good libraries to develop back-end services: Servant, Yesod, Persistent, you name
+            it. But how about the front-end? Enter Miso, a modern framework, in the trail of the well-known React. As
+            opposed to Elm or PureScript, Miso uses the same GHC compiler we know and love, so sharing code between
+            client and server is as easier as it can get!</p>
     </div>
 </div>
 
@@ -234,6 +234,13 @@
         <a name="NeilMitchell" />
         <h4>Migrating HLint to the GHC API</h4>
         <h5>Neil Mitchell</h5>
+        <p>HLint is over 14 years old. Over the last 14 years we've changed license, project name, source control,
+            configuration and much more besides. But until recently, HLint had always used the haskell-src-exts library
+            for parsing Haskell. That parser was forked from the GHC parser 16 years ago, and as GHC has accumulated 16
+            years worth of bug fixes and features, the amount of Haskell code that could be parsed by GHC but not HLint
+            increased. The obvious solution was to use the GHC API for parsing. In this talk I'll describe why we were
+            so reluctant to move to the GHC API, how we decoupled HLint from GHC versions with ghc-lib, and how to
+            change almost every line in a large project, without breaking anything or stopping ongoing development.</p>
     </div>
 </div>
 
