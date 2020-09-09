@@ -4,20 +4,26 @@
 <div class="row">
     <div class="col-md-12">
         <a name="AlejandroSerrano" />
-        <h4>Miso: Haskell in the front-end (workshop)</h4>
-        <h5>Alejandro Serrano</h5>
+        <h3>Miso: Haskell in the front-end (workshop)</h3>
+        <h4>Alejandro Serrano</h4>
         <p>Haskell has no shortage of good libraries to develop back-end services: Servant, Yesod, Persistent, you name
             it. But how about the front-end? Enter Miso, a modern framework, in the trail of the well-known React. As
             opposed to Elm or PureScript, Miso uses the same GHC compiler we know and love, so sharing code between
             client and server is as easier as it can get!</p>
+        <h4>Prerequisites</h4>
+        <p>No need of advanced knowledge, apart from basic Haskell (algebraic data types, functions, IO monad).</p>
+        <h4>Workshop Preparation</h4>
+        <p>In order to take the workshop, you need to install <a href="https://nixos.org/download.html">Nix</a> and
+            follow the instructions in the "Begin" section of the
+            <a href="https://github.com/dmjio/miso/blob/master/README.md#begin">Miso manual</a>.</p>
     </div>
 </div>
 
 <div class="row">
     <div class="col-md-12">
         <a name="AndresLoeh" />
-        <h4>Liquid Haskell (workshop)</h4>
-        <h5>Andres Löh</h5>
+        <h3>Liquid Haskell (workshop)</h3>
+        <h4>Andres Löh</h4>
         <p>Liquid Haskell is an extension to Haskell that adds refinement types to the language, which are then checked
             via an external theorem prover such as z3. With refinement types, one can express many interesting
             properties of programs that are normally out of reach of Haskell's type system or only achievable via quite
@@ -27,6 +33,7 @@
             it much more convenient to use. </p>
         <p>In this tutorial, we'll discuss how refinement types work, give many examples of their use and learn how to
             work with Liquid Haskell productively. </p>
+        <h4>Prerequisites</h4>
         <p>Good familiarity with Haskell basics is useful. However, no knowledge of type system language extensions or
             type-level programming is required.</p>
     </div>
@@ -35,8 +42,8 @@
 <div class="row">
     <div class="col-md-12">
         <a name="AndrewLelechenko" />
-        <h4>Polynomials in Haskell</h4>
-        <h5>Andrew Lelechenko</h5>
+        <h3>Polynomials in Haskell</h3>
+        <h4>Andrew Lelechenko</h4>
         <p>An experience report and a guided tour of the `poly` package (https://github.com/Bodigrim/poly), which is the
             fastest Haskell implementation of polynomial arithmetic. A short intro to the relevant parts of abstract
             algebra is included.</p>
@@ -46,8 +53,8 @@
 <div class="row">
     <div class="col-md-12">
         <a name="AustinHuang" />
-        <h4>Hasktorch: A Haskell library for tensor math and differentiable functional programming</h4>
-        <h5>Austin Huang</h5>
+        <h3>Hasktorch: A Haskell library for tensor math and differentiable functional programming</h3>
+        <h4>Austin Huang</h4>
         <p>Optimization over function composition is the unifying feature of machine learning using neural networks.
             Training neural networks utilizes differentiable layers, where layers implement pure functions. Higher order
             functions such as differentiation, jit optimization, distillation, hyperparameter optimization, are used in
@@ -70,14 +77,16 @@
                 languages and machine learning ecosystems.</li>
         </ol>
         </p>
+        <h4>Prerequisites</h4>
+        <p>This is an intro talk, so relatively little background knowledge is assumed.</p>
     </div>
 </div>
 
 <div class="row">
     <div class="col-md-12">
         <a name="ChristiaanBaaij" />
-        <h4>Building a RISC-V SoC with Haskell and Python (workshop)</h4>
-        <h5>Christiaan Baaij</h5>
+        <h3>Building a RISC-V SoC with Haskell and Python (workshop)</h3>
+        <h4>Christiaan Baaij</h4>
         <p>Haskell and Python, languages that probably do not spring to mind when you think of languages that let you
             get down to the “Bare Metal” of your computer… But they can be used to (and are used to!) create that Bare
             Metal! </p>
@@ -98,14 +107,27 @@
             configuration file the FPGA uses to reconfigure itself into the desired digital logic circuit. He will then
             upload the configuration to a FPGA development board and demonstrate you can interact with the SoC in the
             same way as you did in the Verilator simulation.</p>
+        <h4>Prerequisites</h4>
+        <p>You will need an intermediary knowledge of Haskell for this workshop.</p>
+        <h4>Workshop Preparation</h4>
+        <p>To follow along, you will need to have the following tools installed:</p>
+        <ul>
+          <li>GHC 8.6.5 or higher (if you're using Windows 10 2004, you will need GHC 8.10.2)</li>
+          <li>cabal-install-3.2.0.0 or stack</li>
+          <li>Working python3 environment together with pip and virtualenv</li>
+          <li><a href="https://www.veripool.org/projects/verilator/wiki/Intalling">verilator</a></li>
+        </ul>
+        <p>Windows users are recommended to use WSL2 for the above:
+          <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">https://docs.microsoft.com/en-us/windows/wsl/install-win10</a>
+        </p>
     </div>
 </div>
 
 <div class="row">
     <div class="col-md-12">
         <a name="DavidLuposchainsky" />
-        <h4>Haskell Beginners Workshop</h4>
-        <h5>David Luposchainsky</h5>
+        <h3>Haskell Beginners Workshop</h3>
+        <h4>David Luposchainsky</h4>
         <p>Goal of the workshop is tackling the very basics of Haskell
             development. After setting up the compiler, we’ll be going over the
             basic language features, with frequent small exercises to get hands-on
@@ -118,8 +140,8 @@
 <div class="row">
     <div class="col-md-12">
         <a name="DuncanCoutts" />
-        <h4>Contravariant logging: How to add logging without getting grumpy</h4>
-        <h5>Duncan Coutts</h5>
+        <h3>Contravariant logging: How to add logging without getting grumpy</h3>
+        <h4>Duncan Coutts</h4>
         <p> Logging usually makes me grumpy. It tends to clutter code and adds unnecessary dependencies. It's just not
             beautiful. </p>
         <p>I want to share the good news that there is an approach to logging that does not make me grumpy, and I have
@@ -134,21 +156,21 @@
 <div class="row">
     <div class="col-md-12">
         <a name="EdskoDeVries" />
-        <h4>Being lazy without being bloated</h4>
-        <h5>Edsko de Vries</h5>
+        <h3>Being lazy without being bloated</h3>
+        <h4>Edsko de Vries</h4>
         <p>Laziness is one of Haskell's most distinctive features. It is one of the two
             features of functional programming that "Why Functional Programming Matters"
             identifies as key to modularity, but it is also one of the most frequently cited
             features of Haskell that programmers would perhaps like to change. One reason
             for this ambivalence is that laziness can give rise to space leaks, which can
             sometimes be fiendishly difficult to debug. In this talk we will present a new
-            library called `nothunks` which can be used to test for the absence of
+            library called <code>nothunks</code> which can be used to test for the absence of
             unexpected thunks in long-lived data; when an unexpected thunk is found, a
             "stack trace" is returned identifying precisely where the thunk is ("the second
-            coordinate of a pair in a map in a list in type `T`"). In combination with
+            coordinate of a pair in a map in a list in type <code>T</code>"). In combination with
             QuickCheck, this can be used to test that an API does not create any thunks when
-            it shouldn't and thunks that _are_ created are easily identified and fixed.
-            Whilst it doesn't of course fix _all_ space leaks, it can help avoid a
+            it shouldn't and thunks that <em>are</em> created are easily identified and fixed.
+            Whilst it doesn't of course fix <em>all</em> space leaks, it can help avoid a
             significant proportion of space leaks due to excessive laziness.</p>
     </div>
 </div>
@@ -156,8 +178,8 @@
 <div class="row">
     <div class="col-md-12">
         <a name="JamieWillis" />
-        <h4>Exploring Parsley: Working with Staged Selective Parsers</h4>
-        <h5>Jamie Willis</h5>
+        <h3>Exploring Parsley: Working with Staged Selective Parsers</h3>
+        <h4>Jamie Willis</h4>
         <p>Parser combinator libraries are a popular approach to writing parsers in the functional world. In particular,
             monadic parser combinators take centre stage. But when performance of these parser combinators become a
             concern, then monads prevent us from analysing and optimising our parsers effectively. Selective functors
@@ -170,8 +192,8 @@
 <div class="row">
     <div class="col-md-12">
         <a name="JohannesDrever" />
-        <h4>An Introduction to Applied Category Theory</h4>
-        <h5>Johannes Drever</h5>
+        <h3>An Introduction to Applied Category Theory</h3>
+        <h4>Johannes Drever</h4>
         <p>Originating in abstract mathematics, category theory bridges different mathematical areas. However, it
             recently also showed potential for a wide range of practical applications. In the functional programming
             community applications of functors, monads and monoids have been well known for a long time. </p>
@@ -185,8 +207,8 @@
 <div class="row">
     <div class="col-md-12">
         <a name="LarsBruenjes" />
-        <h4>This ain't your Daddy's Probability Monad</h4>
-        <h5>Lars Brünjes</h5>
+        <h3>This ain't your Daddy's Probability Monad</h3>
+        <h4>Lars Brünjes</h4>
         <p>It is well known that (discrete) probability distributions can be implemented as monads in Haskell in various
             more or less sophisticated ways. </p>
         <p>Things become more complicated when you consider processes that can take a probabilistic amount of time or
@@ -203,30 +225,59 @@
 <div class="row">
     <div class="col-md-12">
         <a name="LarsHupel" />
-        <h4>Theorems for Free</h4>
-        <h5>Lars Hupel</h5>
+        <h3>Theorems for Free</h3>
+        <h4>Lars Hupel</h4>
         <p>In the typed functional programming communities, there is much talk about "reasoning with types". But rarely
             is this elaborated into something concrete. Just how can we extract tangible information from types beyond
             playing mere type tetris? The secret sauce is called parametricity, first described by John C. Reynolds, and
             later applied to Haskell by Philip Wadler in his seminal paper "Theorems for free!".</p>
+        <h4>Prerequisites</h4>
+        <p>This talk expects basic understanding of type variables. Everything else
+          &ndash; including the mathematics &ndash; will be introduced.
+        </p>
     </div>
 </div>
 
 <div class="row">
     <div class="col-md-12">
         <a name="ManuelBaerenz" />
-        <h4>Video & game live coding in Haskell (workshop)</h4>
-        <h5>Manuel Bärenz</h5>
+        <h3>Video & game live coding in Haskell (workshop)</h3>
+        <h4>Manuel Bärenz</h4>
         <p>Learn how to program a small arcade game while you're running and playing it. We use functional reactive
             programming for this, but no previous knowledge of FRP is necessary.</p>
+        <h4>Prerequisites</h4>
+        <h5>Required background</h5>
+        <ul>
+          <li>Basic Haskell knowledge (Monads, data types, records, type classes, simple transformers like <code>StateT</code>
+            and <code>ReaderT</code>
+          </li>
+          <li>Basic Arrow notation (combinators such as <code>>>></code>, <code>***</code> and <code>&&&</code>, <code>proc -> do</code> notation</li>
+        </ul>
+        <h5>Optional, helpful background</h5>
+        <ul>
+          <li>Grasp of basic concept in Functional Reactive Programming (FRP) such as signals/behaviours, streams, events.</li>
+          <li>Basic physics simulation (position, speed, simple collision detection).</li>
+          <li>The <a href="https://hackage.haskell.org/package/gloss"><code>gloss</code></a> vector graphics library.</li>
+        </ul>
+        <h4>Workshop Preparation</h4>
+        <p>We will begin development from a scaffolding project. You will need to clone it and install certain software in order to participate.</p>
+        <p>The scaffolding project is found here: <a href="https://github.com/turion/essence-of-live-coding-tutorial/" rel="nofollow">https://github.com/turion/essence-of-live-coding-tutorial/</a></p>
+        <p>If you are planning on attending <em>and</em> hacking on a project yourself, then please complete the installation steps <em>before attending the tutorial</em>. If any of the steps fails, please leave an issue at <a href="https://github.com/turion/essence-of-live-coding-tutorial/issues" rel="nofollow">https://github.com/turion/essence-of-live-coding-tutorial/issues</a> so we can solve the problem before the tutorial starts.</p>
+        <p>You have successfully set up your environment once you see an interactive window with a ball that starts to move and bounce once you click in it. Please make sure that you complete all the steps until there.</p>
+        <h5></h5>Optional reading material</h5>
+        <ul>
+          <li><a href="https://www.manuelbaerenz.de/essence-of-live-coding/EssenceOfLiveCodingPresentation.html" rel="nofollow">https://www.manuelbaerenz.de/essence-of-live-coding/EssenceOfLiveCodingPresentation.html</a></li>
+          <li><a href="https://www.manuelbaerenz.de/essence-of-live-coding/EssenceOfLiveCoding.pdf" rel="nofollow">https://www.manuelbaerenz.de/essence-of-live-coding/EssenceOfLiveCoding.pdf</a></li>
+          <li><a href="https://github.com/ivanperez-keera/dunai/#reading" rel="nofollow">https://github.com/ivanperez-keera/dunai/#reading</a></li>
+        </ul>
     </div>
 </div>
 
 <div class="row">
     <div class="col-md-12">
         <a name="MichaelSperber" />
-        <h4>Control your effects (workshop)</h4>
-        <h5>Michael Sperber</h5>
+        <h3>Control your effects (workshop)</h3>
+        <h4>Michael Sperber</h4>
         <p>Functional programming is all about not using effects. Particularly in Haskell. Well, it turns out we
             sometimes do want to program with effects. When that happens, we keep them under control. With monads.
             Right? Unfortunately, monads compose quite poorly in Haskell, and when they do, using them is often awkward.
@@ -236,14 +287,19 @@
             the attention it deserves. As a result, we have a handful of patterns and a quickly growing collection of
             effects libraries. Should you jump on one of those bandwagons or plod on with trusty old monad transformers?
             This workshop will help you out!</p>
+        <h4>Prerequisites</h4>
+        <p>To get value from the workshop, you should have rudimentary knowledge of monads.</p>
+        <h4>Workshop Preparation</h4>
+        <p>If you want to play with the code, you should have a working installation of GHC 8.8. (GHC 8.10 might be
+          problematic.)</p>
     </div>
 </div>
 
 <div class="row">
     <div class="col-md-12">
         <a name="NeilMitchell" />
-        <h4>Migrating HLint to the GHC API</h4>
-        <h5>Neil Mitchell</h5>
+        <h3>Migrating HLint to the GHC API</h3>
+        <h4>Neil Mitchell</h4>
         <p>HLint is over 14 years old. Over the last 14 years we've changed license, project name, source control,
             configuration and much more besides. But until recently, HLint had always used the haskell-src-exts library
             for parsing Haskell. That parser was forked from the GHC parser 16 years ago, and as GHC has accumulated 16
@@ -257,41 +313,51 @@
 <div class="row">
     <div class="col-md-12">
         <a name="NicolasWu" />
-        <h4>Persistence makes a Difference</h4>
-        <h5>Nicolas Wu</h5>
+        <h3>Persistence makes a Difference</h3>
+        <h4>Nicolas Wu</h4>
     </div>
 </div>
 
 <div class="row">
-    <div class="col-md-12"> <a name="PepeIborra" />
-        <h4>Let's write a Haskell Language Server plugin (workshop)</h4>
-        <h5>Pepe Iborra</h5>
+    <div class="col-md-12">
+        <a name="PepeIborra" />
+        <h3>Let's write a Haskell Language Server plugin (workshop)</h3>
+        <h4>Pepe Iborra</h4>
         <p>In this workshop we will add a code lens over every implicit import statement, showing the names actually
             imported from the module. Along the way we will learn about the HLS plugin model, how it relates to ghcide,
             and how to build and test our plugin.</p>
+        <h4>Workshop Preparation</h4>
+        <ul>
+          <li>Please follow the setup instructions in <a href="https://github.com/pepeiborra/hls-tutorial"></a>https://github.com/pepeiborra/hls-tutorial"</a>
+            to get a working development environment for Haskell-language-server. Importantly, please make sure to run <code>cabal build</code> in advance of
+            the workshop as it can take a long time.
+          </li>
+          <li>If possible read the full tutorial, in order to become acquainted with the basics of HLS plugin development.</li>
+          <li>A VSCode Live Share will be available for those participants who wish to join, but will not be a requirement.</li>
+        </ul>
     </div>
 </div>
 
 <div class="row">
     <div class="col-md-12"> <a name="RichardEisenberg" />
-        <h4>Partial Type Constructors</h4>
-        <h5>Richard Eisenberg</h5>
-        <p>When we describe the type `Set a`, we say that this type makes sense for any `a`. But this is a small lie: it
-            really only makes sense for types `a` that have an ordering -- that is, types for which `Ord a` holds. This
-            small lie has far-reaching consequences. It means that we cannot write a `Functor` instance for `Set`, it
-            means we might accidentally write uncallable functions that take a `Set (Int -> Int)`, and it means we must
-            repetitively write `Ord a => ...` constraints on every function working with Sets.</p>
-        <p>This talk will explore the possibility of explicitly *partial* type constructors, where we can declare loudly
-            that types like `Set` work only with some type arguments, but not others. The design proposed improves error
-            messages, simplifies type signatures, and allows instances like `Functor` over `Set`s.</p>
+        <h3>Partial Type Constructors</h3>
+        <h4>Richard Eisenberg</h4>
+        <p>When we describe the type <code>Set a</code>, we say that this type makes sense for any <code>a</code>. But this is a small lie: it
+            really only makes sense for types <code>a</code> that have an ordering &ndash; that is, types for which <code>Ord a</code> holds. This
+            small lie has far-reaching consequences. It means that we cannot write a <code>Functor</code> instance for <code>Set</code>, it
+            means we might accidentally write uncallable functions that take a <code>Set (Int -> Int)</code>, and it means we must
+            repetitively write <code>Ord a => ...</code> constraints on every function working with Sets.</p>
+        <p>This talk will explore the possibility of explicitly <em>partial</em> type constructors, where we can declare loudly
+            that types like <code>Set</code> work only with some type arguments, but not others. The design proposed improves error
+            messages, simplifies type signatures, and allows instances like <code>Functor</code> over <code>Set</code>s.</p>
     </div>
 </div>
 
 <div class="row">
     <div class="col-md-12">
         <a name="TamarChristina" />
-        <h4>The new Windows I/O manager (WinIO) in GHC</h4>
-        <h5>Tamar Christina</h5>
+        <h3>The new Windows I/O manager (WinIO) in GHC</h3>
+        <h4>Tamar Christina</h4>
         <p>GHC has a new Windows I/O manager that allows for native support for I/O on Windows. The new I/O manager
             covers everything from Files to Pipes and Sockets in a completely asynchronous manner while providing as
             much information to the Haskell runtime such that useful work can still be done while blocked on I/O. The
@@ -303,11 +369,21 @@
 <div class="row">
     <div class="col-md-12">
         <a name="TomEllis" />
-        <h4>Introduction to Opaleye (workshop)</h4>
-        <h5>Tom Ellis</h5>
+        <h3>Introduction to Opaleye (workshop)</h3>
+        <h4>Tom Ellis</h4>
         <p>This workshop will introduce Opaleye, a Haskell embedded domain specific language for writing PostgreSQL
             queries. In the workshop you will learn how to write type safe and composable code for querying and
             modifying a Postgres database. It will require basic familiarity with writing Haskell code but will
             otherwise be suitable for beginners.</p>
+        <h4>Prerequisites</h4>
+        <p>To get the most out of this workshop you should be familiar with at
+            least intermediate-level Haskell, including "do" notation.
+            Familiarity with SQL will also be useful.</p>
+        <h4>Workshop Preparation</h4>
+        <p>If you
+            want to follow along by writing your own code examples you should know
+            how to clone a Haskell git repository and build it with Cabal (or
+            other build tool of your choice).  Familiarity with the list monad
+            would be particularly helpful for understanding Opaleye's semantics.</p>
     </div>
 </div>
