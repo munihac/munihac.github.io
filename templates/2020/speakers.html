@@ -317,6 +317,19 @@
         <a name="NicolasWu" />
         <h3>Persistence makes a Difference</h3>
         <h4>Nicolas Wu</h4>
+        <p>This talk is aimed at beginners who would like to understand the efficiency
+            of some basic data structures in Haskell. We will explore the implementation of
+            commonly used data structures such as lists and trees, and show how using
+            techniques such as difference lists helps produce efficient structures.</p>
+        <p>A data structure is persistent if all of its previous incarnations remain
+            available after a series of updates.  In Haskell, all data structures are
+            automatically persistent by default since an update corresponds to producing a
+            new value based on the old one.</p>
+        <p>Using persistent data structures can lead to performance problems. For instance,
+            appending two lists together has a linear cost in the first argument, and this
+            can lead to an expensive overhead when several lists are appended together.
+            This talk will demonstrate how difference lists can be used to overcome this
+            efficiency problem, and others like it.</p>
     </div>
 </div>
 
