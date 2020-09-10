@@ -116,13 +116,14 @@
         <h4>Workshop Preparation</h4>
         <p>To follow along, you will need to have the following tools installed:</p>
         <ul>
-          <li>GHC 8.6.5 or higher (if you're using Windows 10 2004, you will need GHC 8.10.2)</li>
-          <li>cabal-install-3.2.0.0 or stack</li>
-          <li>Working python3 environment together with pip and virtualenv</li>
-          <li><a href="https://www.veripool.org/projects/verilator/wiki/Intalling">verilator</a></li>
+            <li>GHC 8.6.5 or higher (if you're using Windows 10 2004, you will need GHC 8.10.2)</li>
+            <li>cabal-install-3.2.0.0 or stack</li>
+            <li>Working python3 environment together with pip and virtualenv</li>
+            <li><a href="https://www.veripool.org/projects/verilator/wiki/Intalling">verilator</a></li>
         </ul>
         <p>Windows users are recommended to use WSL2 for the above:
-          <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">https://docs.microsoft.com/en-us/windows/wsl/install-win10</a>
+            <a
+                href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">https://docs.microsoft.com/en-us/windows/wsl/install-win10</a>
         </p>
     </div>
 </div>
@@ -244,7 +245,7 @@
             later applied to Haskell by Philip Wadler in his seminal paper "Theorems for free!".</p>
         <h4>Prerequisites</h4>
         <p>This talk expects basic understanding of type variables. Everything else
-          &ndash; including the mathematics &ndash; will be introduced.
+            &ndash; including the mathematics &ndash; will be introduced.
         </p>
     </div>
 </div>
@@ -259,27 +260,42 @@
         <h4>Prerequisites</h4>
         <h5>Required background</h5>
         <ul>
-          <li>Basic Haskell knowledge (Monads, data types, records, type classes, simple transformers like <code>StateT</code>
-            and <code>ReaderT</code>
-          </li>
-          <li>Basic Arrow notation (combinators such as <code>>>></code>, <code>***</code> and <code>&&&</code>, <code>proc -> do</code> notation</li>
+            <li>Basic Haskell knowledge (Monads, data types, records, type classes, simple transformers like
+                <code>StateT</code>
+                and <code>ReaderT</code>
+            </li>
+            <li>Basic Arrow notation (combinators such as <code>>>></code>, <code>***</code> and <code>&&&</code>,
+                <code>proc -> do</code> notation</li>
         </ul>
         <h5>Optional, helpful background</h5>
         <ul>
-          <li>Grasp of basic concept in Functional Reactive Programming (FRP) such as signals/behaviours, streams, events.</li>
-          <li>Basic physics simulation (position, speed, simple collision detection).</li>
-          <li>The <a href="https://hackage.haskell.org/package/gloss"><code>gloss</code></a> vector graphics library.</li>
+            <li>Grasp of basic concept in Functional Reactive Programming (FRP) such as signals/behaviours, streams,
+                events.</li>
+            <li>Basic physics simulation (position, speed, simple collision detection).</li>
+            <li>The <a href="https://hackage.haskell.org/package/gloss"><code>gloss</code></a> vector graphics library.
+            </li>
         </ul>
         <h4>Workshop Preparation</h4>
-        <p>We will begin development from a scaffolding project. You will need to clone it and install certain software in order to participate.</p>
-        <p>The scaffolding project is found here: <a href="https://github.com/turion/essence-of-live-coding-tutorial/" rel="nofollow">https://github.com/turion/essence-of-live-coding-tutorial/</a></p>
-        <p>If you are planning on attending <em>and</em> hacking on a project yourself, then please complete the installation steps <em>before attending the tutorial</em>. If any of the steps fails, please leave an issue at <a href="https://github.com/turion/essence-of-live-coding-tutorial/issues" rel="nofollow">https://github.com/turion/essence-of-live-coding-tutorial/issues</a> so we can solve the problem before the tutorial starts.</p>
-        <p>You have successfully set up your environment once you see an interactive window with a ball that starts to move and bounce once you click in it. Please make sure that you complete all the steps until there.</p>
+        <p>We will begin development from a scaffolding project. You will need to clone it and install certain software
+            in order to participate.</p>
+        <p>The scaffolding project is found here: <a href="https://github.com/turion/essence-of-live-coding-tutorial/"
+                rel="nofollow">https://github.com/turion/essence-of-live-coding-tutorial/</a></p>
+        <p>If you are planning on attending <em>and</em> hacking on a project yourself, then please complete the
+            installation steps <em>before attending the tutorial</em>. If any of the steps fails, please leave an issue
+            at <a href="https://github.com/turion/essence-of-live-coding-tutorial/issues"
+                rel="nofollow">https://github.com/turion/essence-of-live-coding-tutorial/issues</a> so we can solve the
+            problem before the tutorial starts.</p>
+        <p>You have successfully set up your environment once you see an interactive window with a ball that starts to
+            move and bounce once you click in it. Please make sure that you complete all the steps until there.</p>
         <h5></h5>Optional reading material</h5>
         <ul>
-          <li><a href="https://www.manuelbaerenz.de/essence-of-live-coding/EssenceOfLiveCodingPresentation.html" rel="nofollow">https://www.manuelbaerenz.de/essence-of-live-coding/EssenceOfLiveCodingPresentation.html</a></li>
-          <li><a href="https://www.manuelbaerenz.de/essence-of-live-coding/EssenceOfLiveCoding.pdf" rel="nofollow">https://www.manuelbaerenz.de/essence-of-live-coding/EssenceOfLiveCoding.pdf</a></li>
-          <li><a href="https://github.com/ivanperez-keera/dunai/#reading" rel="nofollow">https://github.com/ivanperez-keera/dunai/#reading</a></li>
+            <li><a href="https://www.manuelbaerenz.de/essence-of-live-coding/EssenceOfLiveCodingPresentation.html"
+                    rel="nofollow">https://www.manuelbaerenz.de/essence-of-live-coding/EssenceOfLiveCodingPresentation.html</a>
+            </li>
+            <li><a href="https://www.manuelbaerenz.de/essence-of-live-coding/EssenceOfLiveCoding.pdf"
+                    rel="nofollow">https://www.manuelbaerenz.de/essence-of-live-coding/EssenceOfLiveCoding.pdf</a></li>
+            <li><a href="https://github.com/ivanperez-keera/dunai/#reading"
+                    rel="nofollow">https://github.com/ivanperez-keera/dunai/#reading</a></li>
         </ul>
     </div>
 </div>
@@ -302,7 +318,7 @@
         <p>To get value from the workshop, you should have rudimentary knowledge of monads.</p>
         <h4>Workshop Preparation</h4>
         <p>If you want to play with the code, you should have a working installation of GHC 8.8. (GHC 8.10 might be
-          problematic.)</p>
+            problematic.)</p>
     </div>
 </div>
 
@@ -352,12 +368,16 @@
             and how to build and test our plugin.</p>
         <h4>Workshop Preparation</h4>
         <ul>
-          <li>Please follow the setup instructions in <a href="https://github.com/pepeiborra/hls-tutorial"></a>https://github.com/pepeiborra/hls-tutorial"</a>
-            to get a working development environment for Haskell-language-server. Importantly, please make sure to run <code>cabal build</code> in advance of
-            the workshop as it can take a long time.
-          </li>
-          <li>If possible read the full tutorial, in order to become acquainted with the basics of HLS plugin development.</li>
-          <li>A VSCode Live Share will be available for those participants who wish to join, but will not be a requirement.</li>
+            <li>Please follow the setup instructions in <a
+                    href="https://github.com/pepeiborra/hls-tutorial"></a>https://github.com/pepeiborra/hls-tutorial"</a>
+                to get a working development environment for Haskell-language-server. Importantly, please make sure to
+                run <code>cabal build</code> in advance of
+                the workshop as it can take a long time.
+            </li>
+            <li>If possible read the full tutorial, in order to become acquainted with the basics of HLS plugin
+                development.</li>
+            <li>A VSCode Live Share will be available for those participants who wish to join, but will not be a
+                requirement.</li>
         </ul>
     </div>
 </div>
@@ -366,14 +386,21 @@
     <div class="col-md-12"> <a name="RichardEisenberg" />
         <h3>Partial Type Constructors</h3>
         <h4>Richard Eisenberg</h4>
-        <p>When we describe the type <code>Set a</code>, we say that this type makes sense for any <code>a</code>. But this is a small lie: it
-            really only makes sense for types <code>a</code> that have an ordering &ndash; that is, types for which <code>Ord a</code> holds. This
-            small lie has far-reaching consequences. It means that we cannot write a <code>Functor</code> instance for <code>Set</code>, it
-            means we might accidentally write uncallable functions that take a <code>Set (Int -> Int)</code>, and it means we must
+        <p>When we describe the type <code>Set a</code>, we say that this type makes sense for any <code>a</code>. But
+            this is a small lie: it
+            really only makes sense for types <code>a</code> that have an ordering &ndash; that is, types for which
+            <code>Ord a</code> holds. This
+            small lie has far-reaching consequences. It means that we cannot write a <code>Functor</code> instance for
+            <code>Set</code>, it
+            means we might accidentally write uncallable functions that take a <code>Set (Int -> Int)</code>, and it
+            means we must
             repetitively write <code>Ord a => ...</code> constraints on every function working with Sets.</p>
-        <p>This talk will explore the possibility of explicitly <em>partial</em> type constructors, where we can declare loudly
-            that types like <code>Set</code> work only with some type arguments, but not others. The design proposed improves error
-            messages, simplifies type signatures, and allows instances like <code>Functor</code> over <code>Set</code>s.</p>
+        <p>This talk will explore the possibility of explicitly <em>partial</em> type constructors, where we can declare
+            loudly
+            that types like <code>Set</code> work only with some type arguments, but not others. The design proposed
+            improves error
+            messages, simplifies type signatures, and allows instances like <code>Functor</code> over <code>Set</code>s.
+        </p>
     </div>
 </div>
 
@@ -407,7 +434,7 @@
         <p>If you
             want to follow along by writing your own code examples you should know
             how to clone a Haskell git repository and build it with Cabal (or
-            other build tool of your choice).  Familiarity with the list monad
+            other build tool of your choice). Familiarity with the list monad
             would be particularly helpful for understanding Opaleye's semantics.</p>
     </div>
 </div>
