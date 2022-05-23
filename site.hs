@@ -1,7 +1,9 @@
 {-# LANGUAGE OverloadedStrings #-}
 import           Control.Applicative
 import           Data.Aeson.Types
-import qualified Data.HashMap.Strict as M
+import qualified Data.Aeson.Key      as K
+import qualified Data.Aeson.KeyMap   as M
+--import qualified Data.HashMap.Strict as M
 import           Data.Maybe
 import           Data.Monoid         ((<>))
 import           Data.Scientific
@@ -91,7 +93,7 @@ hotelCtx hotels = listField "hotels"
                     (return hotels)
                <> defaultContext
 
-extractMetaData :: MonadMetadata m => String -> Item a -> m String
+extractMetaData :: (MonadMetadata m, MonadFail m) => String -> Item a -> m String
 extractMetaData name item = getMetadataField' (itemIdentifier item) name
 
 
@@ -100,7 +102,7 @@ extractMetaData' name item = do
     let identifier = itemIdentifier item
     metadata <- getMetadata identifier
     let result =
-          case M.lookup name metadata of
+          case M.lookup (K.fromText name) metadata of
             Nothing    -> error $ "Item " ++ show identifier ++ " has no metadata field " ++ show name
             Just value ->
               case value of
