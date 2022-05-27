@@ -40,7 +40,8 @@ main = hakyll $ do
 
     match "templates/*" $ compile templateBodyCompiler
 
-    match "templates/**/*" $ compile templateBodyCompiler
+    match "pages/*" $ compile getResourceBody
+    match "pages/**/*" $ compile getResourceBody
 
     match "hotels/*" $ do
         route $ setExtension "html"
@@ -61,7 +62,7 @@ main = hakyll $ do
         compile $
             getResourceBody
                 >>= applyAsTemplate defaultContext
-                >>= loadAndApplyTemplate "templates/default.html" defaultContext
+                >>= loadAndApplyTemplate "templates/default.html" (defaultContext <> snippetField)
                 >>= relativizeUrls
 
 compileMainPage :: Rules ()
@@ -69,7 +70,7 @@ compileMainPage = do
     route idRoute
     compile $ do
         hotels <- loadAll "hotels/*"
-        let indexCtx = hotelCtx hotels <> defaultContext
+        let indexCtx = hotelCtx hotels <> defaultContext <> snippetField
         getResourceBody
             >>= applyAsTemplate indexCtx
             >>= loadAndApplyTemplate "templates/default.html" indexCtx
