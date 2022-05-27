@@ -52,27 +52,38 @@ main = hakyll $ do
         route idRoute
         compile $ makeItem $ Redirect "2020.html"
 
-    --match "2016.html" compileMainPage
-    --match "2018.html" compileMainPage
-    --match "2019.html" compileMainPage
-    create ["2020.html"] $ do
-        route idRoute
-        compile $ do
-            logo <- load "pages/2020/logo.html" :: Compiler (Item String)
-            introduction <- load "pages/2020/introduction.html"
-            pictures <- load "pages/2019/pictures.html"
-            speakers <- load "pages/2020/speakers.html"
-            contact <- load "pages/contact.html"
-            archive <- load "pages/archive.html"
-            let fragments = listField "pages"
-                    (  field "title" (extractMetaData "title")
-                    <> field "id" (extractMetaData "id")
-                    <> field "body" (pure . itemBody)
-                    )
-                    (pure [logo, introduction, pictures, speakers, contact, archive])
-            page <- getResourceBody >>= loadAndApplyTemplate "templates/default.html" (defaultContext <> snippetField <> fragments)
-            makeItem (itemBody page) >>= relativizeUrls
+    createMainPage "2016.html"
+        [ "pages/2016/logo.html"
+        , "pages/2016/introduction.html"
+        , "pages/2016/pictures.html"
+        , "pages/2016/keynotes.html"
+        ]
 
+    createMainPage "2018.html"
+        [ "pages/2018/logo.html"
+        , "pages/2018/introduction.html"
+        , "pages/2018/pictures.html"
+        , "pages/2018/keynotes.html"
+        , "pages/2018/projects.html"
+        , "pages/2018/schedule.html"
+        ]
+
+    createMainPage "2019.html"
+        [ "pages/2019/logo.html"
+        , "pages/2019/introduction.html"
+        , "pages/2019/pictures.html"
+        , "pages/2019/keynotes.html"
+        , "pages/2019/projects.html"
+        ]
+
+    createMainPage "2020.html"
+        [ "pages/2020/logo.html"
+        , "pages/2020/introduction.html"
+        , "pages/2019/pictures.html"
+        , "pages/2020/speakers.html"
+        , "pages/contact.html"
+        , "pages/archive.html"
+        ]
 
     --match "impressum.html" $ do
     --    route idRoute
@@ -82,14 +93,18 @@ main = hakyll $ do
     --            >>= loadAndApplyTemplate "templates/default.html" (defaultContext <> snippetField)
     --            >>= relativizeUrls
 
-compileMainPage :: Rules ()
-compileMainPage = do
+createMainPage :: Identifier -> [Identifier] -> Rules ()
+createMainPage identifier pages = create [identifier] $ do
     route idRoute
     compile $ do
-        hotels <- loadAll "hotels/*"
-        let indexCtx = hotelCtx hotels <> defaultContext <> snippetField
-        getResourceBody
-            >>= applyAsTemplate indexCtx
+        let pagesCtx = listField "pages"
+                (  field "title" (extractMetaData "title")
+                <> field "id" (extractMetaData "id")
+                <> field "body" (pure . itemBody)
+                )
+                (traverse load pages)
+        let indexCtx = defaultContext <> snippetField <> pagesCtx
+        makeItem ""
             >>= loadAndApplyTemplate "templates/default.html" indexCtx
             >>= relativizeUrls
 
