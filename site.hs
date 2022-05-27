@@ -52,18 +52,35 @@ main = hakyll $ do
         route idRoute
         compile $ makeItem $ Redirect "2020.html"
 
-    match "2016.html" compileMainPage
-    match "2018.html" compileMainPage
-    match "2019.html" compileMainPage
-    match "2020.html" compileMainPage
-
-    match "impressum.html" $ do
+    --match "2016.html" compileMainPage
+    --match "2018.html" compileMainPage
+    --match "2019.html" compileMainPage
+    create ["2020.html"] $ do
         route idRoute
-        compile $
-            getResourceBody
-                >>= applyAsTemplate defaultContext
-                >>= loadAndApplyTemplate "templates/default.html" (defaultContext <> snippetField)
-                >>= relativizeUrls
+        compile $ do
+            logo <- load "pages/2020/logo.html" :: Compiler (Item String)
+            introduction <- load "pages/2020/introduction.html"
+            pictures <- load "pages/2019/pictures.html"
+            speakers <- load "pages/2020/speakers.html"
+            contact <- load "pages/contact.html"
+            archive <- load "pages/archive.html"
+            let fragments = listField "pages"
+                    (  field "title" (extractMetaData "title")
+                    <> field "id" (extractMetaData "id")
+                    <> field "body" (pure . itemBody)
+                    )
+                    (pure [logo, introduction, pictures, speakers, contact, archive])
+            page <- getResourceBody >>= loadAndApplyTemplate "templates/default.html" (defaultContext <> snippetField <> fragments)
+            makeItem (itemBody page) >>= relativizeUrls
+
+
+    --match "impressum.html" $ do
+    --    route idRoute
+    --    compile $
+    --        getResourceBody
+    --            >>= applyAsTemplate defaultContext
+    --            >>= loadAndApplyTemplate "templates/default.html" (defaultContext <> snippetField)
+    --            >>= relativizeUrls
 
 compileMainPage :: Rules ()
 compileMainPage = do
