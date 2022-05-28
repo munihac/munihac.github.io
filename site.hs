@@ -97,12 +97,7 @@ createMainPage :: Identifier -> [Identifier] -> Rules ()
 createMainPage identifier pages = create [identifier] $ do
     route idRoute
     compile $ do
-        let pagesCtx = listField "pages"
-                (  field "title" (extractMetaData "title")
-                <> field "id" (extractMetaData "id")
-                <> field "body" (pure . itemBody)
-                )
-                (traverse load pages)
+        let pagesCtx = listField "pages" defaultContext (traverse load pages)
         let indexCtx = defaultContext <> snippetField <> pagesCtx
         makeItem ""
             >>= loadAndApplyTemplate "templates/default.html" indexCtx
