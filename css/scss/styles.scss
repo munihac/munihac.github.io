@@ -1,11 +1,12 @@
-// Import Bootstrap
+$primary: #8f4e8b;
+$dark: #453a62;
+
 @import "bootstrap/scss/bootstrap.scss";
 
 // Scroll padding for all scroll targets on page used with
 // native CSS smooth scrolling
-// 
+//
 // https://caniuse.com/?search=scroll-padding
-
 html {
     scroll-padding-top: 3.5rem;
 }
