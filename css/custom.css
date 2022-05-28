@@ -7,12 +7,12 @@
     text-align: right;
 }
 
-header img {
+header > img {
     width: 70%;
     margin: 0 15%;
 }
 
-.imgContainer{
+.imgContainer {
     width: 100%;
 }
 .imgContainer img {
