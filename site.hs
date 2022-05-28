@@ -1,11 +1,9 @@
-{-# LANGUAGE LambdaCase #-}
 {-# LANGUAGE OverloadedStrings #-}
-
 import           Control.Applicative
 import           Data.Aeson.Types
 import qualified Data.Aeson.Key      as K
 import qualified Data.Aeson.KeyMap   as M
-import           Data.Foldable
+--import qualified Data.HashMap.Strict as M
 import           Data.Maybe
 import           Data.Monoid         ((<>))
 import           Data.Scientific
@@ -42,8 +40,7 @@ main = hakyll $ do
 
     match "templates/*" $ compile templateBodyCompiler
 
-    match "pages/*" $ compile getResourceBody
-    match "pages/**/*" $ compile getResourceBody
+    match "templates/**/*" $ compile templateBodyCompiler
 
     match "hotels/*" $ do
         route $ setExtension "html"
@@ -54,70 +51,28 @@ main = hakyll $ do
         route idRoute
         compile $ makeItem $ Redirect "2020.html"
 
-    createMainPage "2016.html"
-        [ "pages/2016/logo.html"
-        , "pages/2016/introduction.html"
-        , "pages/2016/pictures.html"
-        , "pages/2016/keynotes.html"
-        , "pages/contact.html"
-        , "pages/archive.html"
-        ]
+    match "2016.html" compileMainPage
+    match "2018.html" compileMainPage
+    match "2019.html" compileMainPage
+    match "2020.html" compileMainPage
 
-    createMainPage "2018.html"
-        [ "pages/2018/logo.html"
-        , "pages/2018/introduction.html"
-        , "pages/2018/pictures.html"
-        , "pages/2018/keynotes.html"
-        , "pages/2018/projects.html"
-        , "pages/2018/schedule.html"
-        , "pages/contact.html"
-        , "pages/archive.html"
-        ]
-
-    createMainPage "2019.html"
-        [ "pages/2019/logo.html"
-        , "pages/2019/introduction.html"
-        , "pages/2019/pictures.html"
-        , "pages/2019/keynotes.html"
-        , "pages/2019/projects.html"
-        , "pages/contact.html"
-        , "pages/archive.html"
-        ]
-
-    createMainPage "2020.html"
-        [ "pages/2020/logo.html"
-        , "pages/2020/introduction.html"
-        , "pages/2019/pictures.html"
-        , "pages/2020/speakers.html"
-        , "pages/contact.html"
-        , "pages/archive.html"
-        ]
-
-    --match "impressum.html" $ do
-    --    route idRoute
-    --    compile $
-    --        getResourceBody
-    --            >>= applyAsTemplate defaultContext
-    --            >>= loadAndApplyTemplate "templates/default.html" (defaultContext <> snippetField)
-    --            >>= relativizeUrls
-
-createMainPage :: Identifier -> [Identifier] -> Rules ()
-createMainPage identifier pages = do
-    let pagesCtx = listField "pages" defaultContext (traverse load pages)
-        menuCtx = listField "menu" defaultContext (traverse load pages)
-    let indexCtx = defaultContext <> snippetField <> menuCtx
-    for_ pages $ \page -> getMetadataField page "url" >>= \case
-        Nothing -> pure ()
-        Just url -> create [fromFilePath url] $ do
-            route idRoute
-            compile $ makeItem ""
-                >>= withItemBody (\_ -> loadBody page)
-                >>= loadAndApplyTemplate "templates/default.html" indexCtx
-                >>= relativizeUrls
-    create [identifier] $ do
+    match "impressum.html" $ do
         route idRoute
-        compile $ makeItem ""
-            >>= loadAndApplyTemplate "templates/default.html" (indexCtx <> pagesCtx)
+        compile $
+            getResourceBody
+                >>= applyAsTemplate defaultContext
+                >>= loadAndApplyTemplate "templates/default.html" defaultContext
+                >>= relativizeUrls
+
+compileMainPage :: Rules ()
+compileMainPage = do
+    route idRoute
+    compile $ do
+        hotels <- loadAll "hotels/*"
+        let indexCtx = hotelCtx hotels <> defaultContext
+        getResourceBody
+            >>= applyAsTemplate indexCtx
+            >>= loadAndApplyTemplate "templates/default.html" indexCtx
             >>= relativizeUrls
 
 hotelCtx :: [Item String] -> Context String
