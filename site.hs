@@ -1,9 +1,11 @@
+{-# LANGUAGE LambdaCase #-}
 {-# LANGUAGE OverloadedStrings #-}
+
 import           Control.Applicative
 import           Data.Aeson.Types
 import qualified Data.Aeson.Key      as K
 import qualified Data.Aeson.KeyMap   as M
---import qualified Data.HashMap.Strict as M
+import           Data.Foldable
 import           Data.Maybe
 import           Data.Monoid         ((<>))
 import           Data.Scientific
@@ -57,6 +59,8 @@ main = hakyll $ do
         , "pages/2016/introduction.html"
         , "pages/2016/pictures.html"
         , "pages/2016/keynotes.html"
+        , "pages/contact.html"
+        , "pages/archive.html"
         ]
 
     createMainPage "2018.html"
@@ -66,6 +70,8 @@ main = hakyll $ do
         , "pages/2018/keynotes.html"
         , "pages/2018/projects.html"
         , "pages/2018/schedule.html"
+        , "pages/contact.html"
+        , "pages/archive.html"
         ]
 
     createMainPage "2019.html"
@@ -74,6 +80,8 @@ main = hakyll $ do
         , "pages/2019/pictures.html"
         , "pages/2019/keynotes.html"
         , "pages/2019/projects.html"
+        , "pages/contact.html"
+        , "pages/archive.html"
         ]
 
     createMainPage "2020.html"
@@ -94,13 +102,22 @@ main = hakyll $ do
     --            >>= relativizeUrls
 
 createMainPage :: Identifier -> [Identifier] -> Rules ()
-createMainPage identifier pages = create [identifier] $ do
-    route idRoute
-    compile $ do
-        let pagesCtx = listField "pages" defaultContext (traverse load pages)
-        let indexCtx = defaultContext <> snippetField <> pagesCtx
-        makeItem ""
-            >>= loadAndApplyTemplate "templates/default.html" indexCtx
+createMainPage identifier pages = do
+    let pagesCtx = listField "pages" defaultContext (traverse load pages)
+        menuCtx = listField "menu" defaultContext (traverse load pages)
+    let indexCtx = defaultContext <> snippetField <> menuCtx
+    for_ pages $ \page -> getMetadataField page "url" >>= \case
+        Nothing -> pure ()
+        Just url -> create [fromFilePath url] $ do
+            route idRoute
+            compile $ makeItem ""
+                >>= withItemBody (\_ -> loadBody page)
+                >>= loadAndApplyTemplate "templates/default.html" indexCtx
+                >>= relativizeUrls
+    create [identifier] $ do
+        route idRoute
+        compile $ makeItem ""
+            >>= loadAndApplyTemplate "templates/default.html" (indexCtx <> pagesCtx)
             >>= relativizeUrls
 
 hotelCtx :: [Item String] -> Context String

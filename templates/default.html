@@ -16,18 +16,19 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav ms-auto">
-                  $for(pages)$ $if(id)$
-                  <li class="nav-item"><a class="nav-link" href="#$id$">$title$</a></li>
-                  $endif$ $endfor$
+                  $for(menu)$
+                    $if(id)$<li class="nav-item"><a class="nav-link" href="#$id$">$title$</a></li>$endif$
+                    $if(url)$<li class="nav-item"><a class="nav-link" href="/$url$">$title$</a></li>$endif$
+                  $endfor$
               </ul>
           </div>
       </div>
     </nav>
     <div class="container px-4">
-      $for(pages)$
+      $if(pages)$ $for(pages)$
         $if(id)$<a name="$id$" />$endif$
         $body$
-      $endfor$
+      $endfor$ $endif$
       $body$
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
