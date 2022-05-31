@@ -2,8 +2,7 @@
 
 $primary: #8f4e8b;
 $dark: adjust-color(#453a62, $lightness: -10);
-$primary-light: adjust-color($primary, $lightness: 35, $saturation: 30);
-//$primary-light: #ff96f9;
+$primary-light: adjust-color($primary, $lightness: 30);
 
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
