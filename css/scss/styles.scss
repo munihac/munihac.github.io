@@ -3,23 +3,39 @@
 $primary: #8f4e8b;
 $dark: adjust-color(#453a62, $lightness: -10);
 $primary-light: adjust-color($primary, $lightness: 30);
+$gray-light: adjust-color($dark, $lightness: 70, $saturation: -10);
 
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/utilities";
 
 $theme-colors: map-merge(
     $theme-colors,
     (
-        "primary-light": $primary-light
+        "primary-light": $primary-light,
+        "gray-light": $gray-light
     )
 );
 
 $theme-colors-rgb: map-merge(
     $theme-colors-rgb,
     (
-        "primary-light": #{to-rgb($primary-light)}
+        "primary-light": #{to-rgb($primary-light)},
+        "gray-light": #{to-rgb($gray-light)}
     )
 );
+
+$utilities: map-merge(
+    $utilities,
+    (
+        "background-color": (
+            property: background-color,
+            class: bg,
+            values: $theme-colors
+        )
+    )
+);
+
 
 @import "bootstrap/scss/bootstrap.scss";
 
