@@ -26,7 +26,7 @@ main = hakyll $ do
         route   idRoute
         compile copyFileCompiler
 
-    match "css/*" $ do
+    match "css/*.css" $ do
         route   idRoute
         compile compressCssCompiler
 
@@ -50,7 +50,7 @@ main = hakyll $ do
 
     create ["index.html"] $ do
         route idRoute
-        compile $ makeItem $ Redirect "2020.html"
+        compile $ makeItem $ Redirect "2022.html"
 
 compileMainPage :: Rules ()
 compileMainPage = do
