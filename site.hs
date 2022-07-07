@@ -14,7 +14,7 @@ import           Hakyll
 main :: IO ()
 main = hakyll $ do
 
-    match "favicon.ico" $ do
+    match "favicon/*" $ do
         route   idRoute
         compile copyFileCompiler
 
