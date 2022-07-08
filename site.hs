@@ -1,7 +1,9 @@
 {-# LANGUAGE OverloadedStrings #-}
 import           Control.Applicative
 import           Data.Aeson.Types
-import qualified Data.HashMap.Strict as M
+import qualified Data.Aeson.Key      as K
+import qualified Data.Aeson.KeyMap   as M
+import           Data.List
 import           Data.Maybe
 import           Data.Monoid         ((<>))
 import           Data.Scientific
@@ -12,7 +14,7 @@ import           Hakyll
 main :: IO ()
 main = hakyll $ do
 
-    match "favicon.ico" $ do
+    match "favicon/*" $ do
         route   idRoute
         compile copyFileCompiler
 
@@ -24,7 +26,7 @@ main = hakyll $ do
         route   idRoute
         compile copyFileCompiler
 
-    match "css/*" $ do
+    match "css/*.css" $ do
         route   idRoute
         compile compressCssCompiler
 
@@ -36,35 +38,23 @@ main = hakyll $ do
         route   idRoute
         compile copyFileCompiler
 
-    match "templates/*" $ compile templateBodyCompiler
-
-    match "templates/**/*" $ compile templateBodyCompiler
+    match ("templates/*" .||. "templates/**/*") $ compile templateBodyCompiler
+    match ("content/*" .||. "content/**/*") $ compile templateBodyCompiler
 
     match "hotels/*" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
             >>= relativizeUrls
 
+    match ("pages/*" .||. "pages/**/*") compileMainPage
+
     create ["index.html"] $ do
         route idRoute
-        compile $ makeItem $ Redirect "2020.html"
-
-    match "2016.html" compileMainPage
-    match "2018.html" compileMainPage
-    match "2019.html" compileMainPage
-    match "2020.html" compileMainPage
-
-    match "impressum.html" $ do
-        route idRoute
-        compile $
-            getResourceBody
-                >>= applyAsTemplate defaultContext
-                >>= loadAndApplyTemplate "templates/default.html" defaultContext
-                >>= relativizeUrls
+        compile $ makeItem $ Redirect "2022.html"
 
 compileMainPage :: Rules ()
 compileMainPage = do
-    route idRoute
+    route (customRoute (fromJust . stripPrefix "pages/" . toFilePath))
     compile $ do
         hotels <- loadAll "hotels/*"
         let indexCtx = hotelCtx hotels <> defaultContext
@@ -91,7 +81,7 @@ hotelCtx hotels = listField "hotels"
                     (return hotels)
                <> defaultContext
 
-extractMetaData :: MonadMetadata m => String -> Item a -> m String
+extractMetaData :: (MonadMetadata m, MonadFail m) => String -> Item a -> m String
 extractMetaData name item = getMetadataField' (itemIdentifier item) name
 
 
@@ -100,7 +90,7 @@ extractMetaData' name item = do
     let identifier = itemIdentifier item
     metadata <- getMetadata identifier
     let result =
-          case M.lookup name metadata of
+          case M.lookup (K.fromText name) metadata of
             Nothing    -> error $ "Item " ++ show identifier ++ " has no metadata field " ++ show name
             Just value ->
               case value of

@@ -7,19 +7,15 @@
     text-align: right;
 }
 
-header img{
+header > img {
     width: 70%;
     margin: 0 15%;
 }
 
-.container{
-    margin-bottom: 30px;
-}
-
-.imgContainer{
+.imgContainer {
     width: 100%;
 }
-.imgContainer img{
+.imgContainer img {
     margin: 2em 5%;
     width: 90%;
 }
