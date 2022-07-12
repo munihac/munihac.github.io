@@ -1,5 +1,9 @@
-{ nixpkgs ? import ./nixpkgs.nix {}, compiler ? "default" }:
+let 
+  defaultSources = import ./nix/sources.nix;
+  defaultNixpkgs = import defaultSources.nixpkgs {};
+in
 
+{ nixpkgs ? defaultNixpkgs, compiler ? "default" }:
 let
   inherit (nixpkgs) pkgs;
 

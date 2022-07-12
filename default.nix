@@ -1,6 +1,7 @@
-{ nixpkgs ? import ./nixpkgs.nix {}, compiler ? "default" }:
+{ sources ? import ./nix/sources.nix, compiler ? "default" }:
 
 let
+  nixpkgs = import sources.nixpkgs {};
   inherit (nixpkgs) pkgs;
 
   haskellPackages = if compiler == "default" then
