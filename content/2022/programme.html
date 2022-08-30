@@ -1,0 +1,123 @@
+<div class="bg-gray-light">
+    <div class="container px-4 py-5">
+        <h2>Programme</h2>
+        <p>The main focus of MuniHac is getting together and hacking on Haskell projects. In addition, we have a number
+            of Keynotes, Talks and workshops. This list is preliminary and will be extended in the next days and weeks,
+            so make sure to check back!</p>
+
+        <div class="row py-3">
+            <div class="col-md-12">
+                <a name="GabriellaGonzalez" />
+                <h5>Keynote</h5>
+                <h3>Minmaxing Slay the Spire with Haskell</h3>
+                <h4>Gabriella Gonzalez</h4>
+            </div>
+            <div class="col-md-12">
+                <p>This talk will explain how to compute the optimal strategy and outcome for a simple Slay the Spire
+                    battle (a rogue-like deck building game). Part of the talk will be Haskell-agnostic (explaining the
+                    basics of Slay the Spire and minmax algorithms) and part of the talk will be Haskell-specific
+                    (introducing cool tricks like probability monads and automatic memoization).</p>
+            </div>
+        </div>
+
+        <div class="row py-3">
+            <div class="col-md-12">
+                <a name="BenGamari" />
+                <h5>Keynote</h5>
+                <h3>Improvements in observability in GHC 9.6</h3>
+                <h4>Ben Gamari</h4>
+            </div>
+            <div class="col-md-12">
+                <p>While Haskell can be a joy to use in production, it has historically lacked many of the observability
+                    mechanisms that other languages take for granted. Things like ubiquitous availability of backtraces,
+                    reliable profiling tools, introspection on threads of execution, and heap inspection tools have long
+                    been lacking. Happily, with increased commercial adoption has come a sharper focus on addressing
+                    these shortcomings. In this talk we will discuss a variety of improvements in these areas, with
+                    particular focus on features coming in GHC 9.6 including the long-awaited exception backtrace
+                    proposal. We will try to describe both the user-facing functionality as well as some of the innards
+                    which make this functionality possible. </p>
+            </div>
+        </div>
+
+        <div class="row py-3">
+            <div class="col-md-12">
+                <a name="DavidLuposchainsky" />
+                <h5>Workshop</h5>
+                <h3>Haskell Beginners Workshop</h3>
+                <h4>David Luposchainsky</h4>
+            </div>
+            <div class="col-md-12">
+                <p>Goal of the workshop is tackling the very basics of Haskell development. After setting up the
+                    compiler, we’ll be going over the basic language features, with frequent small exercises to get
+                    hands-on experience. In the end, we’ll have seen many concepts core to Haskell development, reaching
+                    a certain degree of familiarity with the language to serve as a good basis for further projects.</p>
+            </div>
+        </div>
+
+        <div class="row py-3">
+            <div class="col-md-12">
+                <a name="MichalGajda" />
+                <h5>Talk</h5>
+                <h3>Mathematics of debugging a Haskell program</h3>
+                <h4>Michał J. Gajda</h4>
+            </div>
+            <div class="col-md-12">
+                <p>Can You use a silver bullet to shorten time to debug Your Haskell programs? Yes, and the name of the
+                    bullet is mathematics! We propose a way to roughly estimate complexity of debugging activities, and
+                    ways to reduce time spent on finding this "small" typo.</p>
+            </div>
+        </div>
+
+        <div class="row py-3">
+            <div class="col-md-12">
+                <a name="KrzysztofGogolewski" />
+                <h5>Talk</h5>
+                <h3>Quines and metaprogramming</h3>
+                <h4>Krzysztof Gogolewski</h4>
+            </div>
+            <div class="col-md-12">
+                <p>Quines are programs printing their own source code. How to write a Haskell program printing a Python
+                    program printing a Ruby program printing back the original Haskell program? What other forms of
+                    self-reference are possible? What can this teach us about metaprogramming? How does this relate to
+                    modal logic?</p>
+            </div>
+        </div>
+
+        <div class="row py-3">
+            <div class="col-md-12">
+                <a name="MichaelSperber" />
+                <h5>Talk</h5>
+                <h3>How to Deep Learn with Categories</h3>
+                <h4>Michael Sperber</h4>
+            </div>
+            <div class="col-md-12">
+                <p>One of the uses of Conal Elliott's ConCat infrastructure for compiling with categories is
+                    implementing Deep Learning. ConCat implements the automatic differentiation needed to compute
+                    gradients. It can also be used to transform the resulting code to utilize a GPU via the Accelerate
+                    framework. The talk describes how these pieces fit together in an industrial application, what the
+                    advantages are over the dominant Python-based frameworks, as well as challenges with using the
+                    framework. I also intend to conduct a hacking session on our ConCat codebase.</p>
+            </div>
+        </div>
+
+        <div class="row py-3">
+            <div class="col-md-12">
+                <a name="CassAlexandru" />
+                <h5>Talk</h5>
+                <h3>Structured Traversals for (Multiply) Recursive Algebraic Data Types</h3>
+                <h4>Cass Alexandru</h4>
+            </div>
+            <div class="col-md-12">
+                <p>Structured traversals (a.k.a. recursion schemes) show up all the time when working with inductive
+                    algebraic datatypes (s.a. lists), once you know what to look for. We examine the simplest of these,
+                    the humble catamorphism (<code>foldr</code> for lists), following its journey from motivation, then
+                    via its origin in category theory into the more turbulent waters of mutually recursive datatypes
+                    (s.a. ASTs), putting Haskell's amenities for type-level programming and basic dependent types to
+                    work along the way. </p>
+                <p> The theoretical foundation for the presentation is the <code>multirec</code> paper by Andres Löh et
+                    al. The presentation has a literate Haskell source, so all code on the slides is real. Additionally,
+                    the repo has a pinned nix shell so you can build everything at home.</p>
+            </div>
+        </div>
+    </div>
+</div>
