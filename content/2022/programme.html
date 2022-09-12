@@ -159,5 +159,41 @@
                     the repo has a pinned nix shell so you can build everything at home.</p>
             </div>
         </div>
+
+        <div class="row py-3">
+            <div class="col-md-12">
+                <a name="JoachimBreitner" />
+                <div class="d-flex flex-row flex-wrap">
+                    <img src="img/2022/Joachim_Breitner.jpg" class="rounded-circle me-4 mb-2"
+                        style="height: 96px; width: 96px; object-fit: cover;" />
+                    <div>
+                        <h5>Talk</h5>
+                        <h3>Getting recursive definitions off their bottoms</h3>
+                        <h4>Joachim Breitner</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <p>Haskell claims to be a declarative language, where you just write down some equations, and suddenly
+                    the variables contain the solution to these equations. This works even with recursive equations, but
+                    only in some cases: defining recursive functions, of course, but also cyclic data structures. One
+                    can even apply so-called knot-tying tricks, where a lazy data structure is filled with values that
+                    refer to that data structure! For example, one can very elegantly calculate the reachable nodes in a
+                    graph.</p>
+                <p>… until the graph is cyclic, and suddenly our nice elegant Haskell program silently runs in circles
+                    and will not produce an answer.</p>
+                <p>This is unfortunate: The involved equations, although recursive, do nicely declaratively describe
+                    the solution we want! So let’s make it happen!</p>
+                <p>We’ll see types (Booleans, Sets) that seem to behave just like the normal ones, but recursive
+                    definition somehow magically produce the expected result. And all that in pure code, no monads
+                    anywhere! We’ll see a few use cases that can suddenly be solved much more elegantly.</p>
+                <p>Then we’ll look under the hood of this (arguably) safe API, won’t be deterred by unsafePerformIO,
+                    and find some very imperative, monad-infested, concurrency-worried code that implements a form of
+                    “propagator”. We’ll notice that there is plenty we can do to improve their performance, but won’t
+                    actually go there. Instead, we’ll turn back to the “pure” interface and discuss together if that is
+                    still really “pure”, and what does that mean anyways.
+                </p>
+            </div>
+        </div>
     </div>
 </div>
