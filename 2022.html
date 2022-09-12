@@ -63,7 +63,6 @@
       <p class="lead">October 7–9, 2022 • on-site in Munich</p>
       <div class="d-flex flex-row flex-wrap justify-content-center mb-2">
         <a class="rounded-pill px-3 mx-2 mb-2 btn btn-outline-light" href="./2022.html#about">Learn more</a>
-        <a class="rounded-pill px-3 mx-2 mb-2 btn btn-outline-light" href="./2022.html#cfc">Contribute</a>
         <a class="rounded-pill px-3 mx-2 mb-2 btn btn-primary" href="https://registration.munihac.de/register" target="_blank">Register</a>
       </div>
     </div>
@@ -94,16 +93,14 @@
 <div class="container px-4">
     <h3>Registration</h3>
 
-    <p>Registration is open. We're looking forward to seeing you in Munich!</p>
+    <p>Registration is open. Currently, we have a waiting list. If you register, we'll let you know when a spot becomes
+        vacant due to cancellations.</p>
 
     <div class="d-flex flex-row justify-content-center mb-4">
         <div class="mx-1">
             <a class="btn btn-primary rounded-pill px-3" href="https://registration.munihac.de/register" target="_blank">Register</a>
         </div>
     </div>
-
-    <p>If you would like to present a talk or workshop on MuniHac 2022, also join our <a href="./2022.html#cfc">Call for
-            Contributions</a>!</p>
 </div>
 
 <a name="keynotes"></a>
@@ -282,6 +279,72 @@
                 <p> The theoretical foundation for the presentation is the <code>multirec</code> paper by Andres Löh et
                     al. The presentation has a literate Haskell source, so all code on the slides is real. Additionally,
                     the repo has a pinned nix shell so you can build everything at home.</p>
+            </div>
+        </div>
+
+        <div class="row py-3">
+            <div class="col-md-12">
+                <a name="JoachimBreitner"></a>
+                <div class="d-flex flex-row flex-wrap">
+                    <img src="img/2022/Joachim_Breitner.jpg" class="rounded-circle me-4 mb-2" style="height: 96px; width: 96px; object-fit: cover;" />
+                    <div>
+                        <h5>Talk</h5>
+                        <h3>Getting recursive definitions off their bottoms</h3>
+                        <h4>Joachim Breitner</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <p>Haskell claims to be a declarative language, where you just write down some equations, and suddenly
+                    the variables contain the solution to these equations. This works even with recursive equations, but
+                    only in some cases: defining recursive functions, of course, but also cyclic data structures. One
+                    can even apply so-called knot-tying tricks, where a lazy data structure is filled with values that
+                    refer to that data structure! For example, one can very elegantly calculate the reachable nodes in a
+                    graph.</p>
+                <p>… until the graph is cyclic, and suddenly our nice elegant Haskell program silently runs in circles
+                    and will not produce an answer.</p>
+                <p>This is unfortunate: The involved equations, although recursive, do nicely declaratively describe
+                    the solution we want! So let’s make it happen!</p>
+                <p>We’ll see types (Booleans, Sets) that seem to behave just like the normal ones, but recursive
+                    definition somehow magically produce the expected result. And all that in pure code, no monads
+                    anywhere! We’ll see a few use cases that can suddenly be solved much more elegantly.</p>
+                <p>Then we’ll look under the hood of this (arguably) safe API, won’t be deterred by unsafePerformIO,
+                    and find some very imperative, monad-infested, concurrency-worried code that implements a form of
+                    “propagator”. We’ll notice that there is plenty we can do to improve their performance, but won’t
+                    actually go there. Instead, we’ll turn back to the “pure” interface and discuss together if that is
+                    still really “pure”, and what does that mean anyways.
+                </p>
+            </div>
+        </div>
+
+        <div class="row py-3">
+            <div class="col-md-12">
+                <a name="FinleyMcIlwaine"></a>
+                <div class=" d-flex flex-row flex-wrap">
+                    <img src="img/2022/Finley_McIlwaine.jpg" class="rounded-circle me-4 mb-2" style="height: 96px; width: 96px; object-fit: cover;" />
+                    <div>
+                        <h5>Workshop</h5>
+                        <h3>Profiling Memory Usage With eventlog2html and ghc-debug</h3>
+                        <h4>Finley McIlwaine</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <p> Understanding and analyzing the memory usage of Haskell programs is a notoriously difficult yet
+                    important problem. Recent improvements to GHC's profiling capabilities, along with better tooling,
+                    has made it much easier to deeply and precisely analyze the memory usage characteristics of even
+                    large Haskell programs. </p>
+                <p> This workshop aims to present two such tools that allow high and low level memory usage analysis of
+                    Haskell programs: `eventlog2html` and `ghc-debug`. We will learn how to set up and use
+                    `eventlog2html` to generate high-level visuals and statistics of our program's execution. We will
+                    also learn how to set up and use `ghc-debug` to precisely and programmatically explore our program's
+                    low-level memory usage profile. </p>
+                <p> We will examine these tools by using them on several pre-prepared Haskell programs. The workshop
+                    aims to be beneficial to Haskell programmers of all levels. Beginner Haskell programmers can expect
+                    to gain a deeper understanding of lazy evaluation and the impacts it can have on program
+                    performance. Experienced Haskell programmers can expect to gain an understanding of exactly what
+                    these tools have to offer and the skills necessary to use these tools on their own Haskell programs.
+                </p>
             </div>
         </div>
     </div>
