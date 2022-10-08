@@ -132,6 +132,58 @@
 
         <div class="row py-3">
             <div class="col-md-12">
+                <a name="KrzysztofGogolewski" />
+                <div class="d-flex flex-row flex-wrap">
+                    <img src="img/2022/Krzysztof_Gogolewski.jpg" class="rounded-circle me-4 mb-2"
+                        style="height: 96px; width: 96px; object-fit: cover;" />
+                    <div>
+                        <h5>Talk</h5>
+                        <h3>Quines and metaprogramming</h3>
+                        <h4>Krzysztof Gogolewski</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <p>Quines are programs printing their own source code. How to write a Haskell program printing a Python
+                    program printing a Ruby program printing back the original Haskell program? What other forms of
+                    self-reference are possible? What can this teach us about metaprogramming? How does this relate to
+                    modal logic?</p>
+            </div>
+            <div class="col-md-4">
+                <iframe width="320" height="180" src="https://www.youtube-nocookie.com/embed/Rnji4rZT51s" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="row py-3">
+            <div class="col-md-12">
+                <a name="MichaelSperber" />
+                <div class="d-flex flex-row flex-wrap">
+                    <img src="img/2022/Michael_Sperber.jpg" class="rounded-circle me-4 mb-2"
+                        style="height: 96px; width: 96px; object-fit: cover;" />
+                    <div>
+                        <h5>Talk</h5>
+                        <h3>How to Deep Learn with Categories</h3>
+                        <h4>Michael Sperber</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <p>One of the uses of Conal Elliott's ConCat infrastructure for compiling with categories is
+                    implementing Deep Learning. ConCat implements the automatic differentiation needed to compute
+                    gradients. It can also be used to transform the resulting code to utilize a GPU via the Accelerate
+                    framework. The talk describes how these pieces fit together in an industrial application, what the
+                    advantages are over the dominant Python-based frameworks, as well as challenges with using the
+                    framework. I also intend to conduct a hacking session on our ConCat codebase.</p>
+            </div>
+            <div class="col-md-4">
+                <iframe width="320" height="180" src="https://www.youtube-nocookie.com/embed/y-McNDBbS7M" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="row py-3">
+            <div class="col-md-12">
                 <a name="BenGamari" />
                 <div class="d-flex flex-row flex-wrap">
                     <img src="img/2022/Ben_Gamari.jpg" class="rounded-circle me-4 mb-2"
@@ -143,7 +195,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-8">
                 <p>While Haskell can be a joy to use in production, it has historically lacked many of the observability
                     mechanisms that other languages take for granted. Things like ubiquitous availability of backtraces,
                     reliable profiling tools, introspection on threads of execution, and heap inspection tools have long
@@ -152,6 +204,10 @@
                     particular focus on features coming in GHC 9.6 including the long-awaited exception backtrace
                     proposal. We will try to describe both the user-facing functionality as well as some of the innards
                     which make this functionality possible. </p>
+            </div>
+            <div class="col-md-4">
+                <iframe width="320" height="180" src="https://www.youtube-nocookie.com/embed/vCv1vnY87NI" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
 
@@ -199,50 +255,6 @@
                     compiler, we’ll be going over the basic language features, with frequent small exercises to get
                     hands-on experience. In the end, we’ll have seen many concepts core to Haskell development, reaching
                     a certain degree of familiarity with the language to serve as a good basis for further projects.</p>
-            </div>
-        </div>
-
-        <div class="row py-3">
-            <div class="col-md-12">
-                <a name="KrzysztofGogolewski" />
-                <div class="d-flex flex-row flex-wrap">
-                    <img src="img/2022/Krzysztof_Gogolewski.jpg" class="rounded-circle me-4 mb-2"
-                        style="height: 96px; width: 96px; object-fit: cover;" />
-                    <div>
-                        <h5>Talk</h5>
-                        <h3>Quines and metaprogramming</h3>
-                        <h4>Krzysztof Gogolewski</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <p>Quines are programs printing their own source code. How to write a Haskell program printing a Python
-                    program printing a Ruby program printing back the original Haskell program? What other forms of
-                    self-reference are possible? What can this teach us about metaprogramming? How does this relate to
-                    modal logic?</p>
-            </div>
-        </div>
-
-        <div class="row py-3">
-            <div class="col-md-12">
-                <a name="MichaelSperber" />
-                <div class="d-flex flex-row flex-wrap">
-                    <img src="img/2022/Michael_Sperber.jpg" class="rounded-circle me-4 mb-2"
-                        style="height: 96px; width: 96px; object-fit: cover;" />
-                    <div>
-                        <h5>Talk</h5>
-                        <h3>How to Deep Learn with Categories</h3>
-                        <h4>Michael Sperber</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <p>One of the uses of Conal Elliott's ConCat infrastructure for compiling with categories is
-                    implementing Deep Learning. ConCat implements the automatic differentiation needed to compute
-                    gradients. It can also be used to transform the resulting code to utilize a GPU via the Accelerate
-                    framework. The talk describes how these pieces fit together in an industrial application, what the
-                    advantages are over the dominant Python-based frameworks, as well as challenges with using the
-                    framework. I also intend to conduct a hacking session on our ConCat codebase.</p>
             </div>
         </div>
 
