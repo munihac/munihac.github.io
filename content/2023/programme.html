@@ -1,0 +1,351 @@
+<!-- TODO: Include when the program is clear -->
+<div class="bg-gray-light">
+    <div class="container px-4 py-5">
+        <h2>Programme</h2>
+        <div class="row py-3">
+            <div class="col-md-12">
+                <a name="ProjectPresentations" />
+                <h3>Project Marketplace & Project Presentations</h3>
+                <p>The main focus of MuniHac is getting together and hacking on Haskell projects. At the beginning of
+                    MuniHac, there will be a project marketplace where everyone can do a short intro to their project,
+                    and look for people who would like to join. If you want to present a project or idea, ideally you
+                    would prepare a short summary or pitch, we expect a lot of projects! If you haven't submitted your
+                    project on the registration form, that's no problem: You can be spontaneous as well!</p>
+                <p>On Sunday, there will be a projects presentation, where everyone can show their progress.</p>
+            </div>
+        </div>
+        <div class="row py-3">
+            <div class="col-md-12">
+                <a name="GabriellaGonzalez" />
+                <div class="d-flex flex-row flex-wrap">
+                    <img src="img/2022/Gabriella_Gonzalez.jpg" class="rounded-circle me-4 mb-2"
+                        style="height: 96px; width: 96px; object-fit: cover;" />
+                    <div>
+                        <h5>Keynote</h5>
+                        <h3>Minmaxing Slay the Spire with Haskell</h3>
+                        <h4>Gabriella Gonzalez</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <p>This talk will explain how to compute the optimal strategy and outcome for a simple Slay the Spire
+                    battle (a rogue-like deck building game). Part of the talk will be Haskell-agnostic (explaining the
+                    basics of Slay the Spire and minmax algorithms) and part of the talk will be Haskell-specific
+                    (introducing cool tricks like probability monads and automatic memoization).</p>
+            </div>
+            <div class="col-md-4">
+                <iframe width="320" height="180" src="https://www.youtube-nocookie.com/embed/mwKeVuOyZsU" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="row py-3">
+            <div class="col-md-12">
+                <a name="JoachimBreitner" />
+                <div class="d-flex flex-row flex-wrap">
+                    <img src="img/2022/Joachim_Breitner.jpg" class="rounded-circle me-4 mb-2"
+                        style="height: 96px; width: 96px; object-fit: cover;" />
+                    <div>
+                        <h5>Talk</h5>
+                        <h3>Getting recursive definitions off their bottoms</h3>
+                        <h4>Joachim Breitner</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <p>Haskell claims to be a declarative language, where you just write down some equations, and suddenly
+                    the variables contain the solution to these equations. This works even with recursive equations, but
+                    only in some cases: defining recursive functions, of course, but also cyclic data structures. One
+                    can even apply so-called knot-tying tricks, where a lazy data structure is filled with values that
+                    refer to that data structure! For example, one can very elegantly calculate the reachable nodes in a
+                    graph.</p>
+                <p>… until the graph is cyclic, and suddenly our nice elegant Haskell program silently runs in circles
+                    and will not produce an answer.</p>
+                <p>This is unfortunate: The involved equations, although recursive, do nicely declaratively describe
+                    the solution we want! So let’s make it happen!</p>
+                <p>We’ll see types (Booleans, Sets) that seem to behave just like the normal ones, but recursive
+                    definition somehow magically produce the expected result. And all that in pure code, no monads
+                    anywhere! We’ll see a few use cases that can suddenly be solved much more elegantly.</p>
+                <p>Then we’ll look under the hood of this (arguably) safe API, won’t be deterred by unsafePerformIO,
+                    and find some very imperative, monad-infested, concurrency-worried code that implements a form of
+                    “propagator”. We’ll notice that there is plenty we can do to improve their performance, but won’t
+                    actually go there. Instead, we’ll turn back to the “pure” interface and discuss together if that is
+                    still really “pure”, and what does that mean anyways.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <iframe width="320" height="180" src="https://www.youtube-nocookie.com/embed/UsihVM5CxsQ" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="row py-3">
+            <div class="col-md-12">
+                <a name="MichalGajda" />
+                <div class="d-flex flex-row flex-wrap">
+                    <img src="img/2022/Michal_Gajda.jpg" class="rounded-circle me-4 mb-2"
+                        style="height: 96px; width: 96px; object-fit: cover;" />
+                    <div>
+                        <h5>Talk</h5>
+                        <h3>Mathematics of debugging a Haskell program</h3>
+                        <h4>Michał J. Gajda</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <p>Can you use a silver bullet to shorten time to debug Your Haskell programs? Yes, and the name of the
+                    bullet is mathematics! We propose a way to roughly estimate complexity of debugging activities, and
+                    ways to reduce time spent on finding this "small" typo.</p>
+            </div>
+            <div class="col-md-4">
+                <iframe width="320" height="180" src="https://www.youtube-nocookie.com/embed/b02ce8oKnNY" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="row py-3">
+            <div class="col-md-12">
+                <a name="CassAlexandru" />
+                <div class="d-flex flex-row flex-wrap">
+                    <div>
+                        <h5>Talk</h5>
+                        <h3>Structured Traversals for (Mutually) Recursive Algebraic Data Types</h3>
+                        <h4>Cass Alexandru</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <p>Structured traversals (a.k.a. recursion schemes) show up all the time when working with inductive
+                    algebraic datatypes (s.a. lists), once you know what to look for. We examine the simplest of these,
+                    the humble catamorphism (<code>foldr</code> for lists), following its journey from motivation, then
+                    via its origin in category theory into the more turbulent waters of mutually recursive datatypes
+                    (s.a. ASTs), putting Haskell's amenities for type-level programming and basic dependent types to
+                    work along the way. </p>
+                <p> The theoretical foundation for the presentation is the <code>multirec</code> paper by Andres Löh et
+                    al. The presentation has a literate Haskell source, so all code on the slides is real. Additionally,
+                    the repo has a pinned nix shell so you can build everything at home. Link to the repository:
+                    <a href="https://github.com/cxandru/talk-multirec">github.com/cxandru/talk-multirec</a></p>
+            </div>
+            <div class="col-md-4">
+                <iframe width="320" height="180" src="https://www.youtube-nocookie.com/embed/Xk_inDd0Pgk" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="row py-3">
+            <div class="col-md-12">
+                <a name="KrzysztofGogolewski" />
+                <div class="d-flex flex-row flex-wrap">
+                    <img src="img/2022/Krzysztof_Gogolewski.jpg" class="rounded-circle me-4 mb-2"
+                        style="height: 96px; width: 96px; object-fit: cover;" />
+                    <div>
+                        <h5>Talk</h5>
+                        <h3>Quines and metaprogramming</h3>
+                        <h4>Krzysztof Gogolewski</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <p>Quines are programs printing their own source code. How to write a Haskell program printing a Python
+                    program printing a Ruby program printing back the original Haskell program? What other forms of
+                    self-reference are possible? What can this teach us about metaprogramming? How does this relate to
+                    modal logic?</p>
+            </div>
+            <div class="col-md-4">
+                <iframe width="320" height="180" src="https://www.youtube-nocookie.com/embed/Rnji4rZT51s" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="row py-3">
+            <div class="col-md-12">
+                <a name="MichaelSperber" />
+                <div class="d-flex flex-row flex-wrap">
+                    <img src="img/2022/Michael_Sperber.jpg" class="rounded-circle me-4 mb-2"
+                        style="height: 96px; width: 96px; object-fit: cover;" />
+                    <div>
+                        <h5>Talk</h5>
+                        <h3>How to Deep Learn with Categories</h3>
+                        <h4>Michael Sperber</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <p>One of the uses of Conal Elliott's ConCat infrastructure for compiling with categories is
+                    implementing Deep Learning. ConCat implements the automatic differentiation needed to compute
+                    gradients. It can also be used to transform the resulting code to utilize a GPU via the Accelerate
+                    framework. The talk describes how these pieces fit together in an industrial application, what the
+                    advantages are over the dominant Python-based frameworks, as well as challenges with using the
+                    framework. I also intend to conduct a hacking session on our ConCat codebase.</p>
+            </div>
+            <div class="col-md-4">
+                <iframe width="320" height="180" src="https://www.youtube-nocookie.com/embed/y-McNDBbS7M" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="row py-3">
+            <div class="col-md-12">
+                <a name="BenGamari" />
+                <div class="d-flex flex-row flex-wrap">
+                    <img src="img/2022/Ben_Gamari.jpg" class="rounded-circle me-4 mb-2"
+                        style="height: 96px; width: 96px; object-fit: cover;" />
+                    <div>
+                        <h5>Keynote</h5>
+                        <h3>Improvements in observability in GHC 9.6</h3>
+                        <h4>Ben Gamari</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <p>While Haskell can be a joy to use in production, it has historically lacked many of the observability
+                    mechanisms that other languages take for granted. Things like ubiquitous availability of backtraces,
+                    reliable profiling tools, introspection on threads of execution, and heap inspection tools have long
+                    been lacking. Happily, with increased commercial adoption has come a sharper focus on addressing
+                    these shortcomings. In this talk we will discuss a variety of improvements in these areas, with
+                    particular focus on features coming in GHC 9.6 including the long-awaited exception backtrace
+                    proposal. We will try to describe both the user-facing functionality as well as some of the innards
+                    which make this functionality possible. </p>
+            </div>
+            <div class="col-md-4">
+                <iframe width="320" height="180" src="https://www.youtube-nocookie.com/embed/vCv1vnY87NI" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="row py-3">
+            <div class="col-md-12">
+                <a name="NicolasWu" />
+                <div class="d-flex flex-row flex-wrap">
+                    <img src="img/2022/Nick_Wu.jpg" class="rounded-circle me-4 mb-2"
+                        style="height: 96px; width: 96px; object-fit: cover;" />
+                    <div>
+                        <h5>Keynote</h5>
+                        <h3>Modular Programming with Effects</h3>
+                        <h4>Nicolas Wu</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <p>A distinctive feature in the design of Haskell was the inclusion of <em>monads</em> as the means of
+                    incorporating effects into programs. While it is entirely possible to write effectful programs in a
+                    single monolithic monad, there are advantages to decomposing a monad into smaller building bricks
+                    that can be layered on top of each other: smaller components are more easily reused and can be
+                    flexibly exchanged for others when needs change and improvements are made. Traditionally, this kind
+                    of modularity was achieved through the use of monad transformers, and while this approach works
+                    well, it imposes a proof burden on the implementer. This talk will explore algebraic and scoped
+                    effects as a means of expressing effectful programs where the proof burden is automatically
+                    discharged.</p>
+            </div>
+            <div class="col-md-4">
+                <iframe width="320" height="180" src="https://www.youtube-nocookie.com/embed/wk3Qj15WPpk" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="row py-3">
+            <div class="col-md-12">
+                <a name="DavidLuposchainsky" />
+                <div class="d-flex flex-row flex-wrap">
+                    <img src="img/2022/David_Luposchainsky.jpg" class="rounded-circle me-4 mb-2"
+                        style="height: 96px; width: 96px; object-fit: cover;" />
+                    <div>
+                        <h5>Workshop</h5>
+                        <h3>Haskell Beginners Workshop</h3>
+                        <h4>David Luposchainsky</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <p>Goal of the workshop is tackling the very basics of Haskell development. After setting up the
+                    compiler, we’ll be going over the basic language features, with frequent small exercises to get
+                    hands-on experience. In the end, we’ll have seen many concepts core to Haskell development, reaching
+                    a certain degree of familiarity with the language to serve as a good basis for further projects.</p>
+            </div>
+        </div>
+
+        <div class="row py-3">
+            <div class="col-md-12">
+                <a name="FinleyMcIlwaine" />
+                <div class=" d-flex flex-row flex-wrap">
+                    <img src="img/2022/Finley_McIlwaine.jpg" class="rounded-circle me-4 mb-2"
+                        style="height: 96px; width: 96px; object-fit: cover;" />
+                    <div>
+                        <h5>Workshop</h5>
+                        <h3>Profiling Memory Usage With eventlog2html and ghc-debug</h3>
+                        <h4>Finley McIlwaine</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <p> Understanding and analyzing the memory usage of Haskell programs is a notoriously difficult yet
+                    important problem. Recent improvements to GHC's profiling capabilities, along with better tooling,
+                    has made it much easier to deeply and precisely analyze the memory usage characteristics of even
+                    large Haskell programs. </p>
+                <p> This workshop aims to present two such tools that allow high and low level memory usage analysis of
+                    Haskell programs: `eventlog2html` and `ghc-debug`. We will learn how to set up and use
+                    `eventlog2html` to generate high-level visuals and statistics of our program's execution. We will
+                    also learn how to set up and use `ghc-debug` to precisely and programmatically explore our program's
+                    low-level memory usage profile. </p>
+                <p> We will examine these tools by using them on several pre-prepared Haskell programs. The workshop
+                    aims to be beneficial to Haskell programmers of all levels. Beginner Haskell programmers can expect
+                    to gain a deeper understanding of lazy evaluation and the impacts it can have on program
+                    performance. Experienced Haskell programmers can expect to gain an understanding of exactly what
+                    these tools have to offer and the skills necessary to use these tools on their own Haskell programs.
+                </p>
+            </div>
+        </div>
+
+        <div class="row py-3">
+            <div class="col-md-12">
+                <a name="FranzThoma" />
+                <div class=" d-flex flex-row flex-wrap">
+                    <img src="img/2022/Franz_Thoma.jpg" class="rounded-circle me-4 mb-2"
+                        style="height: 96px; width: 96px; object-fit: cover;" />
+                    <div>
+                        <h5>Workshop</h5>
+                        <h3>Generative Art in Haskell</h3>
+                        <h4>Franz Thoma</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <p>In this tutorial, we’re going to dive into the world of 2D geometry, recursive patterns and
+                    randomness to generate art from Haskell code. Using a beginner-friendly geometry library, we’ll
+                    build up more and more interesting 2D images that are generated algorithmically or even
+                    interactively.</p>
+                <p>I've prepared a few examples like Voronoi patterns, Penrose tiling, and bouncing rays. This is a
+                    guided tour, so feel free to lean back and enjoy, but there will be plenty of time to code along and
+                    bring your own ideas to the Canvas!</p>
+                <p>As a bonus, I'll bring a pen plotter to MuniHac, so we'll be able to output your artwork to physical
+                    paper!</p>
+            </div>
+        </div>
+
+        <div class="row py-3">
+            <div class="col-md-12">
+                <a name="AndresLoeh" />
+                <div class=" d-flex flex-row flex-wrap">
+                    <img src="img/2022/Andres_Loeh.jpg" class="rounded-circle me-4 mb-2"
+                        style="height: 96px; width: 96px; object-fit: cover;" />
+                    <div>
+                        <h5>Workshop</h5>
+                        <h3>Implementing a type inference algorithm<h3>
+                                <h4>Andres Löh</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <p>In this workshop, we are going to look at the type inference
+                    algorithm that forms the core of Haskell's type system, Damas-Hindley-Milner type inference.</p>
+                <p> We are going to look at simple examples, discuss the rules of the underlying type system and
+                    implement the inference algorithm for a simple lambda calculus with let bindings and a few added
+                    language contructs.</p>
+                <p> This workshop is suitable for relative beginners of Haskell as well as more experienced users who
+                    want to systematically understand how basic type inference works and can be implemented. The Haskell
+                    we are going to write will mostly be free of advanced constructs, and no prior experience with type
+                    systems or type theory is assumed.</p>
+            </div>
+        </div>
+    </div>
+</div>
