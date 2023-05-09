@@ -50,7 +50,7 @@ main = hakyll $ do
 
     create ["index.html"] $ do
         route idRoute
-        compile $ makeItem $ Redirect "2022.html"
+        compile $ makeItem $ Redirect "2023.html"
 
 compileMainPage :: Rules ()
 compileMainPage = do
