@@ -6,6 +6,11 @@ on:
     - gh-pages-source
   schedule:
     - cron: '0 3 1 * *' # monthly
+  workflow_dispatch:
+    inputs:
+      source_branch:
+        description: 'Source branch'
+        required: true
 
 jobs:
   build:
@@ -13,11 +18,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout 🛎️
-      uses: actions/checkout@v3.0.2
+      uses: actions/checkout@v3.5.2
     - name: Install Nix ❄️
-      uses: cachix/install-nix-action@v17
+      uses: cachix/install-nix-action@v20
     - name: Install and setup Cachix 💽
-      uses: cachix/cachix-action@v10
+      uses: cachix/cachix-action@v12
       with:
         name: munihac-website
         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
