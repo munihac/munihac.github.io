@@ -7,6 +7,10 @@
     text-align: right;
 }
 
+.legal-notice a {
+    padding: 0 2em 0 2em;
+}
+
 header > img {
     width: 70%;
     margin: 0 15%;
