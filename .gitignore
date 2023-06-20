@@ -3,3 +3,4 @@
 /_site
 publish.sh
 builddir*/
+.vscode
