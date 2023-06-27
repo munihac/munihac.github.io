@@ -195,7 +195,7 @@
     <tr>
       <th scope="row">13:45</th>
       <td colspan="1" class="talk">
-        Ryan Trinkle: React + Reflex: Harmonizing TypeScript and Haskell with Functional Reactive Programming
+        <a href="2023.html#RyanTrinkle">Ryan Trinkle: React + Reflex: Harmonizing TypeScript and Haskell with Functional Reactive Programming</a>
       </td>
     </tr>
 
@@ -206,7 +206,9 @@
 
     <tr>
       <th scope="row">14:55</th>
-      <td colspan="1" class="talk">Christiaan Baaij: Haskell at the Heart of Terabit Laser Communication</td>
+      <td colspan="1" class="talk">
+        <a href="2023.html#ChristiaanBaaij">Christiaan Baaij: Haskell at the Heart of Terabit Laser Communication</a>
+      </td>
       <td rowspan="3" class="workshop">Project presentations & wrap-up</td>
     </tr>
 
@@ -217,7 +219,9 @@
 
     <tr>
       <th scope="row">16:15</th>
-      <td rowspan="2" class="talk">Simon Marlow: Developer Productivity Engineering at Facebook</td>
+      <td rowspan="2" class="talk">
+        <a href="2023.html#SimonMarlow">Simon Marlow: Developer Productivity Engineering at Facebook</a>
+      </td>
     </tr>
 
     <tr>
@@ -255,8 +259,9 @@
 
 <a name="speakers"></a>
 <div class="container px-4 py-5">
-  <h2>Confirmed Speakers</h2>
+  <h2>Speakers</h2>
   <div class="row pt-4">
+    <a name="ChristiaanBaaij"></a>
     <div class="col-md-3 text-center">
       <img src="img/2023/Christiaan_Baaij.jpeg" class="rounded-circle" style="height: 128px; width: 128px; object-fit: cover" /><br />
       <b>Christiaan Baaij</b><br />
@@ -283,6 +288,7 @@
     </div>
   </div>
   <div class="row pt-4">
+    <a name="RyanTrinkle"></a>
     <div class="col-md-9 text-left">
       <h5>React + Reflex: Harmonizing TypeScript and Haskell with Functional Reactive Programming</h5>
       <p>
@@ -300,14 +306,24 @@
   </div>
   <br /><br />
   <div class="row pt-4">
+    <a name="SimonMarlow"></a>
     <div class="col-md-3 text-center">
       <img src="img/2023/simonmarlow.jpg" class="rounded-circle" style="height: 128px; width: 128px; object-fit: cover" /><br />
       <b>Simon Marlow</b><br />
       <a href="https://research.facebook.com/people/marlow-simon/" target="_blank">Meta</a>
     </div>
     <div class="col-md-9 text-left">
-      <h5>Parallel and Concurrent Programming in Haskell</h5>
-      <p><i>More details coming soon!</i></p>
+      <h5>Developer productivity engineering at Facebook</h5>
+      <p>
+        Code indexing is the technology underlying many of the essential tools in the developer's workflow, from IDEs to
+        code search to analysis tools. But code indexing is fragmented: it's usually done differently for each language
+        and even each tool. Technologies like LSIF aim to unify across languages, but are aimed at specific tools or use
+        cases. Glean is an open-source code indexing system we're building at Meta that fills the gaps: scaling to
+        multiple languages, to very large codebases, and crucially including a flexible and powerful query language
+        ("Angle") designed specifically for querying data about code. In this talk I'm going to cover the design of
+        Glean and in particular its interesting query language, and also cover some of the ways that functional
+        programming was useful in building Glean.
+      </p>
     </div>
   </div>
 </div>
