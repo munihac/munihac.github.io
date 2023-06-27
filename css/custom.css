@@ -1,37 +1,41 @@
 .alert-custom {
-    background-color: #f3f3f3;
-    border-color: #f3f3f3;
+  background-color: #f3f3f3;
+  border-color: #f3f3f3;
 }
 
 .footer {
-    text-align: right;
+  text-align: right;
 }
 
 .legal-notice a {
-    padding: 0 2em 0 2em;
+  padding: 0 2em 0 2em;
 }
 
 header > img {
-    width: 70%;
-    margin: 0 15%;
+  width: 70%;
+  margin: 0 15%;
 }
 
 .imgContainer {
-    width: 100%;
+  width: 100%;
 }
 .imgContainer img {
-    margin: 2em 5%;
-    width: 90%;
+  margin: 2em 5%;
+  width: 90%;
 }
 
 .schedule .talk {
-    background-color: #a4cbb2
+  background-color: #a4cbb2;
 }
 
 .schedule .workshop {
-    background-color: #a4b0cb;
+  background-color: #a4b0cb;
 }
 
 .schedule .hacking {
-    background-color: #c6a4cb;
+  background-color: #c6a4cb;
+}
+
+.white-text {
+  color: #fff;
 }
