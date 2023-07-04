@@ -122,9 +122,9 @@
         </p>
       </div>
       <div class="col-md-6">
-        <h5>Hackaton (July 8th — July 9th)</h5>
+        <h5>Hackathon (July 8th — July 9th)</h5>
         <p>
-          The Hackaton on July 8th and July 9th will take place at the premises of TNG Technology Consulting GmbH at
+          The Hackathon on July 8th and July 9th will take place at the premises of TNG Technology Consulting GmbH at
           <a href="https://goo.gl/maps/DQ3JXSev7pEbDEpY9">Beta-Straße 13a (Unterföhring, Munich)</a>.
         </p>
       </div>
@@ -191,7 +191,9 @@
 
     <tr>
       <th scope="row">10:30</th>
-      <td colspan="1" rowspan="4" class="talk">Workshop: Parser Combinators by Andres Löh</td>
+      <td colspan="1" rowspan="4" class="talk">
+        <a href="2023.html#AndresLoeh">Andres Löh – Workshop: "Parser combinators"</a>
+      </td>
       <td colspan="1" rowspan="4" class="workshop">Hacking!</td>
     </tr>
 
@@ -270,72 +272,98 @@
 </div>
 
 <a name="speakers"></a>
-<div class="container px-4 py-5">
-  <h2>Speakers</h2>
-  <div class="row pt-4">
-    <a name="ChristiaanBaaij"></a>
-    <div class="col-md-3 text-center">
-      <img src="img/2023/Christiaan_Baaij.jpeg" class="rounded-circle" style="height: 128px; width: 128px; object-fit: cover" /><br />
-      <b>Christiaan Baaij</b><br />
-      <a href="https://qbaylogic.com/" target="_blank">QBayLogic</a>
+<div class="bg-gray-light">
+  <div class="container px-4 py-5">
+    <h2>Speakers & Workshops</h2>
+    <div class="row pt-4">
+      <a name="ChristiaanBaaij"></a>
+      <div class="col-md-3 text-center">
+        <img src="img/2023/Christiaan_Baaij.jpeg" class="rounded-circle" style="height: 128px; width: 128px; object-fit: cover" /><br />
+        <b>Christiaan Baaij</b><br />
+        <a href="https://qbaylogic.com/" target="_blank">QBayLogic</a>
+      </div>
+      <div class="col-md-9 text-left">
+        <h5>Haskell at the Heart of Terabit Laser Communication</h5>
+        <p>
+          In this talk, we'll explore how Haskell addresses challenges in high-speed laser data transmission between
+          ground stations and satellites. We'll discuss atmospheric-induced signal deformations and the use of adaptive
+          optics with segmented mirrors to counteract them. The crucial role of wavefront sensors operating at 5
+          kilohertz for managing terabit-level throughput will be highlighted.
+        </p>
+        <p>
+          We'll focus on mirror segment calibration, including computing 256 two-dimensional gravity points in a
+          3-microsecond timeframe. To overcome limitations of standard processors, we'll describe our use of the Clash
+          compiler to transform Haskell to low-level VHDL in order to create a suitable FPGA configuration. Join us to
+          gain insights into Haskell's efficient application and its combination with the Clash compiler in
+          high-performance computing scenarios. A key section of the talk will be dedicated to our methodical approach
+          in Haskell, starting from a high-level specification and refining it to a detailed specification that meets
+          the performance requirements of 3 microseconds. Our goal is to provide a deep understanding of how Haskell, in
+          combination with the Clash compiler, can be efficiently applied in high-performance computing scenarios.
+        </p>
+      </div>
     </div>
-    <div class="col-md-9 text-left">
-      <h5>Haskell at the Heart of Terabit Laser Communication</h5>
-      <p>
-        In this talk, we'll explore how Haskell addresses challenges in high-speed laser data transmission between
-        ground stations and satellites. We'll discuss atmospheric-induced signal deformations and the use of adaptive
-        optics with segmented mirrors to counteract them. The crucial role of wavefront sensors operating at 5 kilohertz
-        for managing terabit-level throughput will be highlighted.
-      </p>
-      <p>
-        We'll focus on mirror segment calibration, including computing 256 two-dimensional gravity points in a
-        3-microsecond timeframe. To overcome limitations of standard processors, we'll describe our use of the Clash
-        compiler to transform Haskell to low-level VHDL in order to create a suitable FPGA configuration. Join us to
-        gain insights into Haskell's efficient application and its combination with the Clash compiler in
-        high-performance computing scenarios. A key section of the talk will be dedicated to our methodical approach in
-        Haskell, starting from a high-level specification and refining it to a detailed specification that meets the
-        performance requirements of 3 microseconds. Our goal is to provide a deep understanding of how Haskell, in
-        combination with the Clash compiler, can be efficiently applied in high-performance computing scenarios.
-      </p>
+    <div class="row pt-4">
+      <a name="RyanTrinkle"></a>
+      <div class="col-md-9 text-left">
+        <h5>React + Reflex: Harmonizing TypeScript and Haskell with Functional Reactive Programming</h5>
+        <p>
+          Learn how to combine the best of both TypeScript and Haskell for frontend development. For TypeScript
+          developers, you will learn how to take the reactive principles that made React successful to the next level
+          with pure Functional Reactive Programming (FRP). For Haskell developers, you will learn how to easily
+          integrate with the broader JavaScript ecosystem.
+        </p>
+      </div>
+      <div class="col-md-3 text-center">
+        <img src="img/2023/Ryan_Trinkle.jpeg" class="rounded-circle" style="height: 128px; width: 128px; object-fit: cover" /><br />
+        <b>Ryan Trinkle</b><br />
+        <a href="https://obsidian.systems/" target="_blank">Obsidian Systems</a>
+      </div>
     </div>
-  </div>
-  <div class="row pt-4">
-    <a name="RyanTrinkle"></a>
-    <div class="col-md-9 text-left">
-      <h5>React + Reflex: Harmonizing TypeScript and Haskell with Functional Reactive Programming</h5>
-      <p>
-        Learn how to combine the best of both TypeScript and Haskell for frontend development. For TypeScript
-        developers, you will learn how to take the reactive principles that made React successful to the next level with
-        pure Functional Reactive Programming (FRP). For Haskell developers, you will learn how to easily integrate with
-        the broader JavaScript ecosystem.
-      </p>
+    <div class="row pt-4">
+      <a name="SimonMarlow"></a>
+      <div class="col-md-3 text-center">
+        <img src="img/2023/simonmarlow.jpg" class="rounded-circle" style="height: 128px; width: 128px; object-fit: cover" /><br />
+        <b>Simon Marlow</b><br />
+        <a href="https://research.facebook.com/people/marlow-simon/" target="_blank">Meta</a>
+      </div>
+      <div class="col-md-9 text-left">
+        <h5>Glean: query your code</h5>
+        <p>
+          Code indexing is the technology underlying many of the essential tools in the developer's workflow, from IDEs
+          to code search to analysis tools. But code indexing is fragmented: it's usually done differently for each
+          language and even each tool. Technologies like LSIF aim to unify across languages, but are aimed at specific
+          tools or use cases. Glean is an open-source code indexing system we're building at Meta that fills the gaps:
+          scaling to multiple languages, to very large codebases, and crucially including a flexible and powerful query
+          language ("Angle") designed specifically for querying data about code. In this talk I'm going to cover the
+          design of Glean and in particular its interesting query language, and also cover some of the ways that
+          functional programming was useful in building Glean.
+        </p>
+      </div>
     </div>
-    <div class="col-md-3 text-center">
-      <img src="img/2023/Ryan_Trinkle.jpeg" class="rounded-circle" style="height: 128px; width: 128px; object-fit: cover" /><br />
-      <b>Ryan Trinkle</b><br />
-      <a href="https://obsidian.systems/" target="_blank">Obsidian Systems</a>
-    </div>
-  </div>
-  <br /><br />
-  <div class="row pt-4">
-    <a name="SimonMarlow"></a>
-    <div class="col-md-3 text-center">
-      <img src="img/2023/simonmarlow.jpg" class="rounded-circle" style="height: 128px; width: 128px; object-fit: cover" /><br />
-      <b>Simon Marlow</b><br />
-      <a href="https://research.facebook.com/people/marlow-simon/" target="_blank">Meta</a>
-    </div>
-    <div class="col-md-9 text-left">
-      <h5>Glean: query your code</h5>
-      <p>
-        Code indexing is the technology underlying many of the essential tools in the developer's workflow, from IDEs to
-        code search to analysis tools. But code indexing is fragmented: it's usually done differently for each language
-        and even each tool. Technologies like LSIF aim to unify across languages, but are aimed at specific tools or use
-        cases. Glean is an open-source code indexing system we're building at Meta that fills the gaps: scaling to
-        multiple languages, to very large codebases, and crucially including a flexible and powerful query language
-        ("Angle") designed specifically for querying data about code. In this talk I'm going to cover the design of
-        Glean and in particular its interesting query language, and also cover some of the ways that functional
-        programming was useful in building Glean.
-      </p>
+    <div class="row pt-4">
+      <a name="AndresLoeh"></a>
+      <div class="col-md-9 text-left">
+        <h5>Workshop: Parser Combinators</h5>
+        <p>
+          In this introductory workshop on parser combinators we will: 
+          <ul>
+            <li>Sketch how parser combinators work</li>
+            <li>Contrast simple hand-written parser combinators with a production-ready library such as megaparsec</li>
+            <li>Show how to use parser combinators to parse some simple languages</li>
+            <li>Discuss some of the pitfalls one can run into when using parser combinators</li>
+          </ul>
+        </p>
+        <p>
+          This workshop should mostly be understandable for Haskell beginners. Parsers are a compelling non-trivial
+          application of typical abstraction patterns such as applicative functors and monads and can therefore be
+          helpful in order to build more intuition with these concepts
+        </p>
+      </div>
+      <div class="col-md-3 text-center">
+        <img src="img/2023/andres_loeh.jpeg" class="rounded-circle" style="height: 128px; width: 128px; object-fit: cover" /><br />
+        <b>Andres Löh</b><br />
+        <a href="https://well-typed.com/" target="_blank">Well-Typed LLP</a>
+      </div>
     </div>
   </div>
 </div>
@@ -355,6 +383,7 @@
 <div class="bg-gray-light">
   <div class="container px-4 py-5">
     <h2>Registration</h2>
+    <p>Registration is closed.</p>
     <div class="row pt-4">
       <div class="col-md-1"></div>
       <div class="col-md-10 d-inline-flex justify-content-center">
@@ -367,18 +396,17 @@
 </div>
 
 <a name="contact"></a>
-<div class="bg-gray-light">
-  <div class="container p-4">
-    <h2>Contact</h2>
-    <p>
-      Want to keep in touch and receive updates about MuniHac? We have a
+<div class="container p-4">
+  <h2>Contact</h2>
+  <p>
+    Want to keep in touch and receive updates about MuniHac? We have a
 
-      <a class="text-nowrap" href="https://twitter.com/MuniHac" target="_tab"><i class="bi bi-twitter"></i> Twitter account</a>, a
-      <a class="text-nowrap" href="https://groups.io/g/munihac" target="_tab"><i class="bi bi-envelope-fill"></i> mailing list</a>, and a
-      <a class="text-nowrap" href="https://munihac.slack.com" target="_tab"><i class="bi bi-slack"></i> Slack workspace</a>.
-    </p>
+    <a class="text-nowrap" href="https://twitter.com/MuniHac" target="_tab"><i class="bi bi-twitter"></i> Twitter account</a>, a
+    <a class="text-nowrap" href="https://groups.io/g/munihac" target="_tab"><i class="bi bi-envelope-fill"></i> mailing list</a>, and a
+    <a class="text-nowrap" href="https://munihac.slack.com" target="_tab"><i class="bi bi-slack"></i> Slack workspace</a>.
+  </p>
 
-    <div class="d-flex flex-row flex-wrap justify-content-center mb-2">
+  <div class="d-flex flex-row flex-wrap justify-content-center mb-2">
     <!-- TODO: verify links -->
     <div class="mx-2 mb-2">
         <a class="btn btn-outline-primary rounded-pill px-3" href="https://twitter.com/MuniHac" target="_tab">
@@ -399,8 +427,7 @@
 </div>
 
 
-    <p>You can reach us via email: <a href="mailto:munihac@tngtech.com">munihac@tngtech.com</a>.</p>
-  </div>
+  <p>You can reach us via email: <a href="mailto:munihac@tngtech.com">munihac@tngtech.com</a>.</p>
 </div>
 
 
