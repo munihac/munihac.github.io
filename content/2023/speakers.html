@@ -1,25 +1,32 @@
 <div class="bg-gray-light">
   <div class="container px-4 py-5">
     <h2>Speakers & Workshops</h2>
+
     <div class="row pt-4">
       <a name="ChristiaanBaaij" />
-      <div class="col-md-3 text-center">
-        <img
-          src="img/2023/Christiaan_Baaij.jpeg"
-          class="rounded-circle"
-          style="height: 128px; width: 128px; object-fit: cover" /><br />
-        <b>Christiaan Baaij</b><br />
-        <a href="https://qbaylogic.com/" target="_blank">QBayLogic</a>
+      <div>
+        <div class="col-md-12">
+          <img
+            src="img/2023/Christiaan_Baaij.jpeg"
+            class="rounded-circle float-start"
+            style="height: 128px; width: 128px; object-fit: cover; margin-right: 25px" />
+          <br />
+          <br />
+          <h5>Christiaan Baaij — <a href="https://qbaylogic.com/" target="_blank">QBayLogic</a></h5>
+          <h3>Haskell at the Heart of Terabit Laser Communication</h3>
+        </div>
       </div>
-      <div class="col-md-9 text-left">
-        <h5>Haskell at the Heart of Terabit Laser Communication</h5>
-        <p>
+      <div class="col-md-12" style="margin-top: 10px">
+        <div class="youtube-button-container youtube-2023 float-end" style="margin-left: 30px; margin-bottom: 10px">
+          <button onclick="loadYoutubeIframe('sruXs0GydE0', this)" class="youtube-button">Load video</button>
+        </div>
+        <p class="justify-text">
           In this talk, we'll explore how Haskell addresses challenges in high-speed laser data transmission between
           ground stations and satellites. We'll discuss atmospheric-induced signal deformations and the use of adaptive
           optics with segmented mirrors to counteract them. The crucial role of wavefront sensors operating at 5
           kilohertz for managing terabit-level throughput will be highlighted.
         </p>
-        <p>
+        <p class="justify-text">
           We'll focus on mirror segment calibration, including computing 256 two-dimensional gravity points in a
           3-microsecond timeframe. To overcome limitations of standard processors, we'll describe our use of the Clash
           compiler to transform Haskell to low-level VHDL in order to create a suitable FPGA configuration. Join us to
@@ -31,40 +38,64 @@
         </p>
       </div>
     </div>
+
+    <br />
+
     <div class="row pt-4">
       <a name="RyanTrinkle" />
-      <div class="col-md-9 text-left">
-        <h5>React + Reflex: Harmonizing TypeScript and Haskell with Functional Reactive Programming</h5>
-        <p>(Slides available on <a href="https://docs.google.com/presentation/d/1xz36u2462BDeq9gxTMze17JrIkVXK6nZO_8BWgnBc4E/edit?usp=sharing" target="_tab">Google Slides</a>)</p>
-        <p>
+      <div>
+        <div class="col-md-12">
+          <img
+            src="img/2023/Ryan_Trinkle.jpeg"
+            class="rounded-circle float-start"
+            style="height: 128px; width: 128px; object-fit: cover; margin-right: 25px" />
+          <br />
+          <h5>Ryan Trinkle — <a href="https://obsidian.systems/" target="_blank">Obsidian Systems</a></h5>
+          <h3>React + Reflex: Harmonizing TypeScript and Haskell with Functional Reactive Programming</h3>
+        </div>
+      </div>
+
+      <div class="col-md-12" style="margin-top: 10px">
+        <div class="youtube-button-container youtube-2023 float-end" style="margin-left: 30px; margin-bottom: 15px">
+          <button onclick="loadYoutubeIframe('gKpWF6J9hMM', this)" class="youtube-button">Load video</button>
+        </div>
+        <p class="justify-text">
           Learn how to combine the best of both TypeScript and Haskell for frontend development. For TypeScript
           developers, you will learn how to take the reactive principles that made React successful to the next level
           with pure Functional Reactive Programming (FRP). For Haskell developers, you will learn how to easily
           integrate with the broader JavaScript ecosystem.
         </p>
-      </div>
-      <div class="col-md-3 text-center">
-        <img
-          src="img/2023/Ryan_Trinkle.jpeg"
-          class="rounded-circle"
-          style="height: 128px; width: 128px; object-fit: cover" /><br />
-        <b>Ryan Trinkle</b><br />
-        <a href="https://obsidian.systems/" target="_blank">Obsidian Systems</a>
+        <p class="justify-text">
+          (Slides available on
+          <a
+            href="https://docs.google.com/presentation/d/1xz36u2462BDeq9gxTMze17JrIkVXK6nZO_8BWgnBc4E/edit?usp=sharing"
+            target="_tab"
+            >Google Slides</a
+          >)
+        </p>
       </div>
     </div>
+
     <div class="row pt-4">
       <a name="SimonMarlow" />
-      <div class="col-md-3 text-center">
-        <img
-          src="img/2023/simonmarlow.jpg"
-          class="rounded-circle"
-          style="height: 128px; width: 128px; object-fit: cover" /><br />
-        <b>Simon Marlow</b><br />
-        <a href="https://research.facebook.com/people/marlow-simon/" target="_blank">Meta</a>
+      <div>
+        <div class="col-md-12">
+          <img
+            src="img/2023/simonmarlow.jpg"
+            class="rounded-circle float-start"
+            style="height: 128px; width: 128px; object-fit: cover; margin-right: 25px" />
+          <br />
+          <br />
+          <h5>Simon Marlow — <a href="https://research.facebook.com/people/marlow-simon/" target="_blank">Meta</a></h5>
+          <h3>Glean: query your code</h3>
+        </div>
       </div>
-      <div class="col-md-9 text-left">
-        <h5>Glean: query your code</h5>
-        <p>
+
+      <div class="col-md-12" style="margin-top: 10px">
+        <div class="youtube-button-container youtube-2023 float-end" style="margin-left: 30px; margin-bottom: 15px">
+          <button onclick="loadYoutubeIframe('eFglEyb-KfM', this)" class="youtube-button">Load video</button>
+        </div>
+        <p class="justify-text">
           Code indexing is the technology underlying many of the essential tools in the developer's workflow, from IDEs
           to code search to analysis tools. But code indexing is fragmented: it's usually done differently for each
           language and even each tool. Technologies like LSIF aim to unify across languages, but are aimed at specific
@@ -76,32 +107,35 @@
         </p>
       </div>
     </div>
+
     <div class="row pt-4">
       <a name="AndresLoeh" />
-      <div class="col-md-9 text-left">
-        <h5>Workshop: Parser Combinators</h5>
-        <p>
-          In this introductory workshop on parser combinators we will: 
-          <ul>
-            <li>Sketch how parser combinators work</li>
-            <li>Contrast simple hand-written parser combinators with a production-ready library such as megaparsec</li>
-            <li>Show how to use parser combinators to parse some simple languages</li>
-            <li>Discuss some of the pitfalls one can run into when using parser combinators</li>
-          </ul>
-        </p>
-        <p>
+      <div>
+        <div class="col-md-12">
+          <img
+            src="img/2023/andres_loeh.jpeg"
+            class="rounded-circle float-start"
+            style="height: 128px; width: 128px; object-fit: cover; margin-right: 25px" />
+          <br />
+          <br />
+          <h5>Andres Löh — <a href="https://well-typed.com/" target="_blank">Well-Typed LLP</a></h5>
+          <h3>Workshop: Parser Combinators</h3>
+        </div>
+      </div>
+
+      <div class="col-md-12" style="margin-top: 10px">
+        <p class="justify-text">In this introductory workshop on parser combinators we will:</p>
+        <ul>
+          <li>Sketch how parser combinators work</li>
+          <li>Contrast simple hand-written parser combinators with a production-ready library such as megaparsec</li>
+          <li>Show how to use parser combinators to parse some simple languages</li>
+          <li>Discuss some of the pitfalls one can run into when using parser combinators</li>
+        </ul>
+        <p class="justify-text">
           This workshop should mostly be understandable for Haskell beginners. Parsers are a compelling non-trivial
           application of typical abstraction patterns such as applicative functors and monads and can therefore be
           helpful in order to build more intuition with these concepts
         </p>
-      </div>
-      <div class="col-md-3 text-center">
-        <img
-          src="img/2023/andres_loeh.jpeg"
-          class="rounded-circle"
-          style="height: 128px; width: 128px; object-fit: cover" /><br />
-        <b>Andres Löh</b><br />
-        <a href="https://well-typed.com/" target="_blank">Well-Typed LLP</a>
       </div>
     </div>
   </div>
