@@ -39,3 +39,46 @@ header > img {
 .white-text {
   color: #fff;
 }
+
+.youtube-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 180px;
+  min-width: 320px;
+  max-width: 320px;
+  /* pick one of background color or background image+size */
+  /* background-color: rgba(128, 128, 128, 0.2); */
+}
+.youtube-2022 {
+  background-image: url("../img/2022/munihac-2022-logo.png");
+  background-size: auto 180px;
+}
+.youtube-2020 {
+  background-image: url("../img/2020/youtube-placeholder.png");
+  background-size: auto 180px;
+}
+.youtube-2019 {
+  background-image: url("../img/2019/youtube-placeholder.png");
+  background-size: auto 180px;
+}
+.youtube-2018 {
+  background-image: url("../img/2018/youtube-placeholder.png");
+  background-size: auto 180px;
+}
+.youtube-2016 {
+  background-image: url("../img/2016/youtube-placeholder.png");
+  background-size: auto 180px;
+}
+.youtube-button {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: #ff0000;
+  color: #ffffff;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
