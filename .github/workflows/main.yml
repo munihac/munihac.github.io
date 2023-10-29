@@ -3,37 +3,57 @@ name: Build and deploy site
 on:
   push:
     branches:
-    - gh-pages-source
+      - gh-pages-source
   schedule:
-    - cron: '0 3 1 * *' # monthly
+    - cron: "0 3 1 * *" # monthly
   workflow_dispatch:
     inputs:
       source_branch:
-        description: 'Source branch'
+        description: "Source branch"
         required: true
+
+env:
+  BUCKET_NAME: aws.munihac.de
+  AWS_REGION: eu-central-1
+  DEPLOYMENT_ROLE_ARN: arn:aws:iam::566060999293:role/munihac-github-deployment-role
+
+# Required to fetch OIDC token
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
   build:
     name: Build generator and compile site
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout 🛎️
-      uses: actions/checkout@v3.5.2
-    - name: Install Nix ❄️
-      uses: cachix/install-nix-action@v20
-    - name: Install and setup Cachix 💽
-      uses: cachix/cachix-action@v12
-      with:
-        name: munihac-website
-        signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
-    - name: Build Generator and Site 👷
-      run: |
-        nix-build
-        cp -RL result result-with-changed-permissions
-        chmod -R +w result-with-changed-permissions/
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: master
-        FOLDER: result-with-changed-permissions
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3.5.2
+      - name: Install Nix ❄️
+        uses: cachix/install-nix-action@v20
+      - name: Install and setup Cachix 💽
+        uses: cachix/cachix-action@v12
+        with:
+          name: munihac-website
+          signingKey: "${{ secrets.CACHIX_SIGNING_KEY }}"
+      - name: Build Generator and Site 👷
+        run: |
+          nix-build
+          cp -RL result result-with-changed-permissions
+          chmod -R +w result-with-changed-permissions/
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: master
+          FOLDER: result-with-changed-permissions
+      - name: Obtain OIDC token
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ env.AWS_REGION }}
+          role-to-assume: ${{ env.DEPLOYMENT_ROLE_ARN }}
+      - name: Deploy static site to S3 bucket
+        run: |
+          aws sts get-caller-identity
+          aws s3api list-objects --bucket ${{ env.BUCKET_NAME }} --debug
+          aws s3 sync ./result-with-changed-permissions/ s3://${{ env.BUCKET_NAME }} --delete
