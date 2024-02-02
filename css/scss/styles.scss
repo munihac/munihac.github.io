@@ -1,9 +1,9 @@
 @import "../node_modules/bootstrap/scss/functions";
 
 $primary: #8f4e8b;
-$dark: adjust-color(#453a62, $lightness: -10);
-$primary-light: adjust-color($primary, $lightness: 30);
-$gray-light: adjust-color($dark, $lightness: 70, $saturation: -10);
+$dark: adjust-color(#453a62, $lightness: -10%);
+$primary-light: adjust-color($primary, $lightness: 30%);
+$gray-light: adjust-color($dark, $lightness: 70%, $saturation: -10%);
 
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
