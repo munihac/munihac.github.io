@@ -9,33 +9,35 @@ $gray-light: adjust-color($dark, $lightness: 70, $saturation: -10);
 @import "../node_modules/bootstrap/scss/mixins";
 @import "../node_modules/bootstrap/scss/utilities";
 
+// TODO: Should we vendor this as we do with 'bootstrap.js' in the /js folder?
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
 $theme-colors: map-merge(
-    $theme-colors,
-    (
-        "primary-light": $primary-light,
-        "gray-light": $gray-light
-    )
+  $theme-colors,
+  (
+    "primary-light": $primary-light,
+    "gray-light": $gray-light,
+  )
 );
 
 $theme-colors-rgb: map-merge(
-    $theme-colors-rgb,
-    (
-        "primary-light": #{to-rgb($primary-light)},
-        "gray-light": #{to-rgb($gray-light)}
-    )
+  $theme-colors-rgb,
+  (
+    "primary-light": #{to-rgb($primary-light)},
+    "gray-light": #{to-rgb($gray-light)},
+  )
 );
 
 $utilities: map-merge(
-    $utilities,
-    (
-        "background-color": (
-            property: background-color,
-            class: bg,
-            values: $theme-colors
-        )
-    )
+  $utilities,
+  (
+    "background-color": (
+      property: background-color,
+      class: bg,
+      values: $theme-colors,
+    ),
+  )
 );
-
 
 @import "bootstrap/scss/bootstrap.scss";
 
@@ -44,17 +46,17 @@ $utilities: map-merge(
 //
 // https://caniuse.com/?search=scroll-padding
 html {
-    scroll-padding-top: 3.5rem;
+  scroll-padding-top: 3.5rem;
 }
 
 // Header padding accounts for the height of the navbar
 header {
-    padding-top: 6rem + 3.5rem;
-    padding-bottom: 6rem;
+  padding-top: 6rem + 3.5rem;
+  padding-bottom: 6rem;
 }
 
 // Section padding
 section {
-    padding-top: 9rem;
-    padding-bottom: 9rem;
+  padding-top: 9rem;
+  padding-bottom: 9rem;
 }
