@@ -6,7 +6,7 @@ This is the Haskell project to build the (static) website [www.munihac.de](http:
 
 Using [Nix/NixOS](https://nixos.org/):
 
-```
+```sh
 nix-build
 ```
 
