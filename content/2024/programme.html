@@ -45,7 +45,22 @@
         </div>
       </div>
       <div class="col-md-12">
-        <p></p>
+        <p>
+          The <code>.cabal</code> file defines what encompasses a package in the Haskell ecosystem. It is strictly
+          required if you want to upload your package to Hackage. As such, almost anyone has to write or modify
+          <code>.cabal</code>
+          files at some point in their Haskell career, but due to its unique syntax, this often proves harder than
+          necessary. Recently, Haskell Language Server started to close the gap between support for Haskell and cabal
+          source files, by introducing the cabal-plugin.
+        </p>
+        <p>
+          In this talk, we are going to take a closer look at the integration of the cabal-plugin into the architecture
+          of the Haskell Language Server and explore its key concepts for providing a snappy, interactive developer
+          experience. We are going to discuss the Language Server Protocol, and the plugin architecture, which allows us
+          to extend HLS with a minimal amount of effort. These features will be explained by doing a deep-dive into the
+          "cabal-plugin", which allows HLS to check <code>.cabal</code> files for syntax errors, provide completions,
+          and even more features that help to read, write and modify <code>.cabal</code> files
+        </p>
       </div>
     </div>
 
