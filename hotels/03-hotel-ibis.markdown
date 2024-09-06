@@ -1,6 +1,6 @@
 ---
 name: "Hotel ibis Munich City North"
-url: "http://www.ibis.com/gb/hotel-0996-ibis-munich-city-north/index.shtml"
+url: "https://all.accor.com/ssr/app/ibis/rates/0996/index.de.shtml"
 stars: 2
 street: "Ungererstrasse 139"
 zip: "80805"
