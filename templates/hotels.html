@@ -1,13 +1,13 @@
-<h2>Hotels</h2>
+<div class="container px-4 py-5">
+  <h2>Hotels</h2>
 
-<p>A few suggestions to help you find a hotel.</p>
+  <p>A few suggestions to help you find a hotel.</p>
 
-$for(hotels)$
-<div class="alert alert-custom">
-  <div class="row">
+  $for(hotels)$
+  <div class="row py-2">
     <div class="col-md-8">
       <address>
-        <strong><a href="$url$">$name$</a></strong>
+        <strong><a href="$url$" target="_blank">$name$</a></strong>
         $for(stars)$
         <span class="glyphicon $class$" aria-hidden="true"></span>
         $endfor$
@@ -16,12 +16,12 @@ $for(hotels)$
         $zip$ $city$
       </address>
       $if(remark)$
-      <strong>Remark: </strong>$remark$
+      $remark$
       $endif$
     </div>
     <div class="col-md-4">
-      <iframe width="100%" height="100%" frameborder="0" style="border:0" src="$mapsurl$" allowfullscreen></iframe>
+      <iframe src="$mapsurl$" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
+  $endfor$
 </div>
-$endfor$
