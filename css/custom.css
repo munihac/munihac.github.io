@@ -90,3 +90,27 @@ header > img {
 .justify-text {
   text-align: justify;
 }
+
+/* Specific for 2024 */
+
+.loading-dots::after {
+  content: ".";
+  display: inline-block;
+  width: 1em;
+  text-align: left;
+  animation: dots 2s steps(4, end) infinite;
+}
+
+@keyframes dots {
+  0%,
+  25% {
+    content: ".";
+  }
+  50% {
+    content: "..";
+  }
+  75%,
+  100% {
+    content: "...";
+  }
+}
