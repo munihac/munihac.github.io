@@ -3,14 +3,10 @@ name: Build and deploy site
 on:
   push:
     branches:
-    - gh-pages-source
+      - gh-pages-source
   schedule:
-    - cron: '0 3 1 * *' # monthly
+    - cron: "0 3 1 * *" # monthly
   workflow_dispatch:
-    inputs:
-      source_branch:
-        description: 'Source branch'
-        required: true
 
 env:
   AWS_REGION: ${{ vars.AWS_REGION }}
@@ -27,49 +23,48 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout 🛎️
-      uses: actions/checkout@v4
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
 
-    - name: Install Nix ❄️
-      uses: cachix/install-nix-action@v25
+      - name: Install Nix ❄️
+        uses: cachix/install-nix-action@v25
 
-    - name: Install and setup Cachix 💽
-      uses: cachix/cachix-action@v14
-      with:
-        name: munihac-website
-        signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
+      - name: Install and setup Cachix 💽
+        uses: cachix/cachix-action@v14
+        with:
+          name: munihac-website
+          signingKey: "${{ secrets.CACHIX_SIGNING_KEY }}"
 
-    - name: Build Generator and Site 👷
-      run: |
-        nix-build
-        cp -RL result result-with-changed-permissions
-        chmod -R +w result-with-changed-permissions/
+      - name: Build Generator and Site 👷
+        run: |
+          nix-build
+          cp -RL result result-with-changed-permissions
+          chmod -R +w result-with-changed-permissions/
 
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: build-artifacts
-        path: result-with-changed-permissions/
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifacts
+          path: result-with-changed-permissions/
 
   deploy-aws:
     name: Deploy to AWS
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - name: Download build artifacts
-      uses: actions/download-artifact@v4
-      with:
-        name: build-artifacts
-        path: result
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts
+          path: result
 
-    - name: Obtain OIDC token
-      uses: aws-actions/configure-aws-credentials@v4
-      with:
-        aws-region: ${{ env.AWS_REGION }}
-        role-to-assume: ${{ env.DEPLOYMENT_ROLE_ARN }}
+      - name: Obtain OIDC token
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ env.AWS_REGION }}
+          role-to-assume: ${{ env.DEPLOYMENT_ROLE_ARN }}
 
-    - name: Deploy static site to S3 bucket
-      run: |
-        aws sts get-caller-identity
-        aws s3api list-objects --bucket ${{ env.BUCKET_NAME }} --debug
-        aws s3 sync ./result/ s3://${{ env.BUCKET_NAME }} --delete
+      - name: Deploy static site to S3 bucket
+        run: |
+          aws sts get-caller-identity
+          aws s3 sync ./result/ s3://${{ env.BUCKET_NAME }} --delete
