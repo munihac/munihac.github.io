@@ -65,6 +65,4 @@ jobs:
           role-to-assume: ${{ env.DEPLOYMENT_ROLE_ARN }}
 
       - name: Deploy static site to S3 bucket
-        run: |
-          aws sts get-caller-identity
-          aws s3 sync ./result/ s3://${{ env.BUCKET_NAME }} --delete
+        run: aws s3 sync ./result/ s3://${{ env.BUCKET_NAME }} --delete --size-only
