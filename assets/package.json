@@ -8,12 +8,12 @@
     "css-compile": "sass --load-path=node_modules --style=expanded --source-map --embed-sources --precision 6 styles.scss:dist/styles.css",
     "css-lint": "stylelint ./styles.scss",
     "css-prefix": "postcss --replace dist/styles.css --use autoprefixer --map",
-    "copy-assets": "cp -r node_modules/bootstrap-icons/font/* dist/ && cp node_modules/bootstrap/dist/js/bootstrap.min.js dist/ && cp custom.css dist/",
+    "copy-assets": "rm -rf dist && mkdir dist && cp -r node_modules/bootstrap-icons/font/* node_modules/bootstrap/dist/js/bootstrap.bundle.min.js custom.css dist/",
     "css": "npm-run-all css-compile css-prefix copy-assets",
     "test": "npm run css-lint && npm run css"
   },
   "dependencies": {
-    "bootstrap": "5.1.3",
+    "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3"
   },
   "devDependencies": {
@@ -27,6 +27,6 @@
     "stylelint-config-twbs-bootstrap": "^14.0.0"
   },
   "engines": {
-    "node": ">=18.0.0 <23.0.0"
+    "node": ">=18.0.0 <24.0.0"
   }
 }

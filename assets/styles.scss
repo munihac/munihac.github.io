@@ -6,6 +6,7 @@ $primary-light: adjust-color($primary, $lightness: 30%);
 $gray-light: adjust-color($dark, $lightness: 70%, $saturation: -10%);
 
 @import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/utilities";
 
