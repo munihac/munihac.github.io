@@ -11,8 +11,8 @@ At the moment the assets must be built locally and check-in to the repository.
 To do that, run the following commands:
 
 ```sh
-yarn install
-yarn css
+npm install --no-save
+npm run css
 ```
 
-And commit the changes.
+The `.dist/` folder is generated automatically by the `npm run css` command and must be commited to the repository.
