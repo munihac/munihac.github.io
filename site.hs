@@ -10,6 +10,7 @@ import           Data.Scientific
 import qualified Data.Text           as T
 import           Debug.Trace
 import           Hakyll
+import           System.FilePath (takeExtension, (</>), joinPath, splitPath)
 
 main :: IO ()
 main = hakyll $ do
@@ -26,9 +27,13 @@ main = hakyll $ do
         route   idRoute
         compile copyFileCompiler
 
-    match "css/*.css" $ do
-        route   idRoute
+    match "assets/dist/**/*.css" $ do
+        route $ customRoute (\ident -> "assets" </> (dropDirectory2 $ toFilePath ident))
         compile compressCssCompiler
+
+    match "assets/dist/**" $ do
+        route $ customRoute (\ident -> "assets" </> (dropDirectory2 $ toFilePath ident))
+        compile copyFileCompiler
 
     match "js/*" $ do
         route   idRoute
@@ -97,3 +102,6 @@ extractMetaData' name item = do
                 Number n -> fromJust (toBoundedInteger n)
                 other    -> error $ "Item " ++ show identifier ++ " is of unknown type: " ++ show other
     return result
+
+dropDirectory2 :: FilePath -> FilePath
+dropDirectory2 = joinPath . drop 2 . splitPath

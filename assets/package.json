@@ -5,10 +5,11 @@
   "description": "Customizing the color scheme for MuniHac",
   "scripts": {
     "build": "npm run css",
-    "css-compile": "sass --load-path=node_modules --style=expanded --source-map --embed-sources --precision 6 scss/styles.scss:styles.css",
+    "css-compile": "sass --load-path=node_modules --style=expanded --source-map --embed-sources --precision 6 scss/styles.scss:dist/styles.css",
     "css-lint": "stylelint scss/",
-    "css-prefix": "postcss --replace styles.css --use autoprefixer --map",
-    "css": "npm-run-all css-compile css-prefix",
+    "css-prefix": "postcss --replace dist/styles.css --use autoprefixer --map",
+    "copy-assets": "cp -r node_modules/bootstrap-icons/font/* dist/ && cp node_modules/bootstrap/dist/js/bootstrap.min.js dist/ && cp custom.css dist/",
+    "css": "npm-run-all css-compile css-prefix copy-assets",
     "test": "npm run css-lint && npm run css"
   },
   "dependencies": {
@@ -28,6 +29,6 @@
     "stylelint-config-twbs-bootstrap": "^14.0.0"
   },
   "engines": {
-    "node": ">=16.0.0 <19.0.0"
+    "node": ">=18.0.0 <23.0.0"
   }
 }
