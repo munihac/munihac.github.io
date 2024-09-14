@@ -16,3 +16,10 @@ npm run css
 ```
 
 The `.dist/` folder is generated automatically by the `npm run css` command and must be commited to the repository.
+
+# Ideas for further extension & refinement
+
+- Install the `glyphicons` fonts as an npm package and serve them from the `assets/` project (currently they are vendored-in in `../fonts/`)
+- Use `purgecss` to reduce the size of the stylesheets
+- Do not check-in the `dist/` folder to the repository.
+  Instead build it as part of the deployment pipeline.
