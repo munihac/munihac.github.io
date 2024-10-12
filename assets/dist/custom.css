@@ -50,6 +50,10 @@ header > img {
   /* pick one of background color or background image+size */
   /* background-color: rgba(128, 128, 128, 0.2); */
 }
+.youtube-2024-siebenhandl {
+  background-image: url("../img/2024/thumbnail/siebenhandl.jpg");
+  background-size: auto 180px;
+}
 .youtube-2023 {
   background-image: url("../img/2023/munihac-2023-logo.svg");
   background-size: auto 180px;
