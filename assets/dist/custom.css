@@ -50,6 +50,10 @@ header > img {
   /* pick one of background color or background image+size */
   /* background-color: rgba(128, 128, 128, 0.2); */
 }
+.youtube-2024-niki {
+  background-image: url("../img/2024/thumbnail/niki.jpg");
+  background-size: auto 180px;
+}
 .youtube-2024-hecate {
   background-image: url("../img/2024/thumbnail/hecate.jpg");
   background-size: auto 180px;
