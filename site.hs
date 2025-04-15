@@ -28,11 +28,11 @@ main = hakyll $ do
         compile copyFileCompiler
 
     match "assets/dist/**/*.css" $ do
-        route $ customRoute (\ident -> "assets" </> (dropDirectory2 $ toFilePath ident))
+        route $ customRoute (\ident -> "assets" </> (dropDirectory $ toFilePath ident))
         compile compressCssCompiler
 
     match "assets/dist/**" $ do
-        route $ customRoute (\ident -> "assets" </> (dropDirectory2 $ toFilePath ident))
+        route $ customRoute (\ident -> "assets" </> (dropDirectory $ toFilePath ident))
         compile copyFileCompiler
 
     match "js/*" $ do
@@ -103,5 +103,5 @@ extractMetaData' name item = do
                 other    -> error $ "Item " ++ show identifier ++ " is of unknown type: " ++ show other
     return result
 
-dropDirectory2 :: FilePath -> FilePath
-dropDirectory2 = joinPath . drop 2 . splitPath
+dropDirectory :: FilePath -> FilePath
+dropDirectory = joinPath . drop 2 . splitPath
