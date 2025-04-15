@@ -102,3 +102,7 @@ header > img {
 .justify-text {
   text-align: justify;
 }
+
+.inline-icon {
+  margin-right: 4px;
+}
