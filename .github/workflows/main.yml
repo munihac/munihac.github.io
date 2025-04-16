@@ -7,6 +7,12 @@ on:
   schedule:
     - cron: "0 3 1 * *" # monthly
   workflow_dispatch:
+    inputs:
+      force_redeploy:
+        description: "Enforce a full re-deployment by invalidating the AWS S3 cache"
+        required: false
+        default: false
+        type: boolean
 
 env:
   AWS_REGION: ${{ vars.AWS_REGION }}
@@ -64,5 +70,12 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
           role-to-assume: ${{ env.DEPLOYMENT_ROLE_ARN }}
 
+      # Default behavior is to include the flag --size-only
+      # It can be omitted to enforce a full re-deploy (slower)
       - name: Deploy static site to S3 bucket
-        run: aws s3 sync ./result/ s3://${{ env.BUCKET_NAME }} --delete --size-only
+        run: |
+          if [ "${{ github.event.inputs.force_redeploy }}" == "true" ]; then
+            aws s3 sync ./result/ s3://${{ env.BUCKET_NAME }} --delete
+          else
+            aws s3 sync ./result/ s3://${{ env.BUCKET_NAME }} --delete --size-only
+          fi
