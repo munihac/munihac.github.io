@@ -3,9 +3,7 @@ name: Build and deploy site
 on:
   push:
     branches:
-      - gh-pages-source
-  schedule:
-    - cron: "0 3 1 * *" # monthly
+      - master
   workflow_dispatch:
     inputs:
       force_redeploy:

@@ -20,15 +20,10 @@ stack exec site rebuild
 stack exec site watch     # now open the webpage in your browser: http://localhost:8000/
 ```
 
-## Publishing to master
+## Branch model
 
-Changes are made on `gh-pages-source`, live version is built via hakyll and published on `master`.
+Changes are made on year-specific branches `munihac-20xx`.
 
-```bash
-# on gh-pages-source
-stack build
-stack exec site clean
-stack exec site build
-git checkout master
-cp -R _site/* .
-```
+## Deployment
+
+Deploy via Github actions.
