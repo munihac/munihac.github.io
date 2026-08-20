@@ -1,22 +1,167 @@
 <div class="container px-4 py-5">
   <h2>Programme</h2>
 
-  <em>Our lineup is growing. Stay tuned!</em>
-
   <div class="row py-3">
-    <div class="col-md-12">
+    <div class="col-12">
       <a name="ManuelChakravarty" />
       <div class="d-flex flex-row flex-wrap">
         <img
           src="img/2026/manuel_chakravarty.jpg"
           class="rounded-circle me-4 mb-2"
           style="height: 96px; width: 96px; object-fit: cover" />
-        <div>
+        <div class="flex-shrink-1">
           <h5>Keynote</h5>
           <h4>Manuel Chakravarty</h4>
         </div>
       </div>
     </div>
   </div>
-</div>
 
+  <div class="row py-3">
+    <div class="col-12">
+      <a name="DominikSchrempf" />
+      <div class="d-flex flex-row flex-wrap">
+        <img
+          src="img/2026/dominik_schrempf.jpg"
+          class="rounded-circle me-4 mb-2"
+          style="height: 96px; width: 96px; object-fit: cover" />
+        <div class="flex-shrink-1">
+          <h5>Keynote</h5>
+          <h3>Compiling C to Haskell – How <code>hs-bindgen</code> Translates C Headers</h3>
+          <h4>Dominik Schrempf</h4>
+        </div>
+        <p>
+          C has a library for everything, and those
+          libraries are fast, battle-tested, and maintained
+          by somebody else. Reaching them from Haskell is
+          the hard part: a Haskell-native rewrite is a
+          project of its own, and hand-writing bindings is
+          tedious and error-prone. =hs-bindgen=
+          automatically generates those bindings for you.
+        </p>
+        <p>
+          In this talk, we explore the vision and
+          the architecture behind =hs-bindgen=: a compiler
+          whose source language is C headers and whose
+          target is Haskell modules. We discuss some
+          challenges of reconciling C's low-level memory
+          model with Haskell's rich type system. I hope to
+          convince you that using a C library from Haskell
+          is less like a project of its own and more like an
+          afternoon's work.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row py-3">
+    <div class="col-12">
+      <a name="ZiyangLiu" />
+      <div class="d-flex flex-row flex-wrap">
+        <img
+          src="img/2026/ziyang_liu.jpg"
+          class="rounded-circle me-4 mb-2"
+          style="height: 96px; width: 96px; object-fit: cover" />
+        <div class="flex-shrink-1">
+          <h5>Keynote</h5>
+          <h3>The Well-Compiled Haskeller</h3>
+          <h4>Ziyang Liu</h4>
+        </div>
+        <p>
+          As Haskell developers, we love to talk about
+          equational reasoning, type safety,
+          compositionality, parametricity, and so on. These
+          are great for reasoning about what the program
+          computes, and they rest on a semantics that
+          deliberately abstracts away many of the things
+          compilers do. But they say much less about many
+          concerns that matter in practice: how fast a
+          program runs, what it allocates, why an
+          optimization did or didn’t fire, or why the
+          compiler is producing a baffling error.
+        </p>
+        <p>
+          This talk argues that a good understanding of your
+          compiler can make you a much better functional
+          programmer. Through a series of examples,
+          including some surprising ones, we’ll see how
+          looking past the source language can sharpen our
+          intuition, challenge common assumptions, and help
+          us write better programs.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row py-3">
+    <div class="col-12">
+      <a name="DavidBinder" />
+      <div class="d-flex flex-row flex-wrap">
+        <img
+          src="img/2026/david_binder.jpg"
+          class="rounded-circle me-4 mb-2"
+          style="height: 96px; width: 96px; object-fit: cover" />
+        <div class="flex-shrink-1">
+          <h5>Talk</h5>
+          <h3>Past, Present and Future of the Haskell Language Report</h3>
+          <h4>David Binder</h4>
+        </div>
+        <p>
+          In this talk I am going to take a look at how we
+          got to the current Haskell report, how it changed
+          over the decades, and present the work we are
+          currently undertaking to update it. I will present
+          my own ideas on what the role of the language
+          report can be going forward, but we will hopefully
+          also discuss how the language report can fit with
+          the GHC and CLC proposal processes to document and
+          specify the language we love to use.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row py-3">
+    <div class="col-12">
+      <a name="NikoPachuashvili" />
+      <div class="d-flex flex-row flex-wrap">
+        <img
+          src="img/2026/niko_pachuashvili.jpg"
+          class="rounded-circle me-4 mb-2"
+          style="height: 96px; width: 96px; object-fit: cover" />
+        <div class="flex-shrink-1">
+          <h5>Talk</h5>
+          <h3>Triage: Or, How I Finally Got Away With Haskell in Anger</h3>
+          <h4>Niko Pachuashvili</h4>
+        </div>
+        <p>
+          A doctor friend asked me to build a patient
+          scheduling platform. With no team to cover the
+          database, frontend, and UX, AI agents filled the
+          gaps — my first real chance to use Haskell as the
+          primary language for a real application, built
+          around a typed domain model as the AI agent's
+          specification.
+        </p><p>
+          Whenever complexity piled up, pushing correctness
+          back into the domain model almost always helped: a
+          sprawl of possible transitions collapsed into a
+          forward-only process through a few states, and
+          whole categories of "can it go back to that
+          state?" bugs simply stopped being askable.
+        </p><p>
+          But that strategy has a limit. Two staff claiming
+          the same request at once depends on timing the
+          type checker was never given as input — the model
+          can't rule out what it was never told about.
+        </p><p>
+          Takeaway: `Domain.hs` is a real specification for
+          an AI agent — but only as far as the facts it's
+          actually given. Concurrency is where this
+          experiment found that boundary.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
