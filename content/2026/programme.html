@@ -11,8 +11,45 @@
           style="height: 96px; width: 96px; object-fit: cover" />
         <div class="flex-shrink-1">
           <h5>Keynote</h5>
+          <h3>Accelerate your numeric code</h3>
           <h4>Manuel Chakravarty</h4>
         </div>
+        <p>
+          Accelerate is a library to achieve high
+          performance for numeric algorithms (such as those
+          found in graphics, simulations, and machine
+          learning) on multicore CPU and GPU systems.
+          Accelerate doesn’t achieve this by forcing you to
+          write low-level monadic code, but by encouraging
+          high-level purely functional code.
+        </p><p>
+          You guessed it. There is a price to pay. In
+          Accelerate, you need to write your numeric array
+          algorithms in an embedded language. That language
+          is a subset of Haskell designed to facilitate
+          high-performance data parallel algorithms. The
+          rest of your program is still plain Haskell.
+        </p><p>
+          Accelerate comes with custom backends that
+          translate code written in the embedded language
+          into highly optimised machine code. That code gets
+          efficiently scheduled onto multicore CPU and GPU
+          systems by a custom runtime system.
+        </p><p>
+          In this talk, I like to achieve three goals: (1) I
+          want to enable you to use Accelerate to implement
+          numeric algorithms; (2) I want to provide a
+          high-level outline of how Accelerate works; and
+          (3) I want to encourage you to use Accelerate or
+          even contribute to it. The first goal is in reach,
+          even for beginning Haskell users. For the second
+          goal, we will have to dive deeper, but I’ll keep
+          it accessible with examples and thorough
+          explanations. And finally, to use Accelerate
+          effectively, it is more important to understand
+          the algorithm that you want to implement than to
+          be a Haskell expert.
+        </p>
       </div>
     </div>
   </div>
