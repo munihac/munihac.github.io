@@ -50,6 +50,16 @@ header > img {
   /* pick one of background color or background image+size */
   /* background-color: rgba(128, 128, 128, 0.2); */
 }
+.youtube-2026 {
+  background-image: url("../img/2026/munihac-2026-logo.svg");
+  background-size: auto 180px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.youtube-2026-ziyang {
+  background-image: url("../img/2026/thumbnail/ziyang_liu.jpg");
+  background-size: auto 180px;
+}
 .youtube-2025-rodrigo {
   background-image: url("../img/2025/munihac-2025-logo.svg");
   background-size: auto 180px;
