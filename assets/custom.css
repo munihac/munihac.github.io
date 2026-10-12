@@ -56,6 +56,10 @@ header > img {
   background-position: center;
   background-repeat: no-repeat;
 }
+.youtube-2026-dominik {
+  background-image: url("../img/2026/thumbnail/dominik_schrempf.jpg");
+  background-size: auto 180px;
+}
 .youtube-2026-ziyang {
   background-image: url("../img/2026/thumbnail/ziyang_liu.jpg");
   background-size: auto 180px;
